@@ -7,6 +7,7 @@ import android.view.MenuItem;
 
 /**
  * making some comments here.
+ * haha
  */
 public class MainActivity extends ActionBarActivity {
 
