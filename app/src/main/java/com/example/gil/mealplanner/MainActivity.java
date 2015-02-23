@@ -10,7 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
 import android.widget.Toast;
-//goTeam
+
 //import java.util.Calendar;
 
 public class MainActivity extends ActionBarActivity {
