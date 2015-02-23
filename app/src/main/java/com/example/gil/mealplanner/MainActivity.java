@@ -1,14 +1,10 @@
 package com.example.gil.mealplanner;
-//GO TEAM!!
+
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-/**
- * making some comments here.
- * haha
- */
 public class MainActivity extends ActionBarActivity {
 
     @Override
