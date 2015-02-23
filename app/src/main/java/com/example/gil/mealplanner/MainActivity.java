@@ -37,7 +37,9 @@ public class MainActivity extends ActionBarActivity {
                         Toast.LENGTH_LONG).show();
                 Context context = cal.getContext();
 
-                Intent intent = new Intent(context, dayView.class);
+                Intent intent = new Intent();
+                intent.setClass(context, dayView.class);
+                intent.putExtra("date", "date");
                 startActivity(intent);
             }
         });
