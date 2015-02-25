@@ -1,6 +1,8 @@
 package com.example.gil.mealplanner;
 
 import android.annotation.TargetApi;
+import android.app.ActionBar;
+import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
