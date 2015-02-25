@@ -5,6 +5,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -16,11 +17,13 @@ public class dayView extends ActionBarActivity {
         setContentView(R.layout.activity_day_view);
 
         Intent intent =  getIntent();
-        String action = intent.getAction();
+        //String action = intent.getAction();
 
-        String name= intent.getStringExtra("name");
+        String date= intent.getStringExtra("date");
 
-//        Toast.makeText(this, name, Toast.LENGTH_LONG);
+        TextView view = (TextView) findViewById(R.id.date);
+        view.setText(date);
+//        Toast.makeText(this, date, Toast.LENGTH_LONG).show();
     }
 
 
