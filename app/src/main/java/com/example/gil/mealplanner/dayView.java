@@ -24,7 +24,7 @@ public class dayView extends ActionBarActivity {
         TextView view = (TextView) findViewById(R.id.date);
 //        String text = R.string.title_activity_day_view;
         Toast.makeText( this, R.string.title_activity_day_view, Toast.LENGTH_LONG).show();
-        setTitle("CHANGED");
+        setTitle(date);
         view.setText(date);
 //        Toast.makeText(this, date, Toast.LENGTH_LONG).show();
     }
