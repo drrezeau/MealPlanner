@@ -32,12 +32,53 @@ public class MainActivity extends ActionBarActivity {
                                             int dayOfMonth) {
 //                TODO Auto-generated method stub
 
-                Toast.makeText(getBaseContext(), "Selected Date is\n\n"
-                                + dayOfMonth + " : " + month + " : " + year,
-                        Toast.LENGTH_LONG).show();
+
                 Context context = cal.getContext();
 
-                Intent intent = new Intent(context, dayView.class);
+                Intent intent = new Intent();
+                intent.setClass(context, dayView.class);
+                String sMonth = new String();
+                switch (month)
+                {
+                    case 0:
+                        sMonth = "January";
+                        break;
+                    case 1:
+                        sMonth = "February";
+                        break;
+                    case 2:
+                        sMonth = "March";
+                        break;
+                    case 3:
+                        sMonth = "April";
+                        break;
+                    case 4:
+                        sMonth = "May";
+                        break;
+                    case 5:
+                        sMonth = "June";
+                        break;
+                    case 6:
+                        sMonth = "July";
+                        break;
+                    case 7:
+                        sMonth = "August";
+                        break;
+                    case 8:
+                        sMonth = "September";
+                        break;
+                    case 9:
+                        sMonth = "October";
+                        break;
+                    case 10:
+                        sMonth = "November";
+                        break;
+                    case 11:
+                        sMonth = "December";
+                        break;
+                }
+
+                intent.putExtra("date", dayOfMonth + " " + sMonth + " " + year);
                 startActivity(intent);
             }
         });

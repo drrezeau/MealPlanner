@@ -1,9 +1,12 @@
 package com.example.gil.mealplanner;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class dayView extends ActionBarActivity {
@@ -12,7 +15,18 @@ public class dayView extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_view);
+
+        Intent intent =  getIntent();
+        //String action = intent.getAction();
+
+        String date= intent.getStringExtra("date");
+
+        TextView view = (TextView) findViewById(R.id.date);
+        view.setText(date);
+//        Toast.makeText(this, date, Toast.LENGTH_LONG).show();
     }
+
+
 
 
     @Override
