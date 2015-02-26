@@ -1,10 +1,15 @@
 package com.example.gil.mealplanner;
 
+//import android.app.ActionBar;
+//import android.app.TabActivity;
 import android.content.Intent;
+//import android.database.DataSetObserver;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TabHost;
 
 
 public class dayView extends ActionBarActivity {
@@ -19,6 +24,23 @@ public class dayView extends ActionBarActivity {
 
         String date= intent.getStringExtra("date");
         setTitle(date);
+
+
+        TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
+        tabHost.setup();
+
+
+        TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
+        TabHost.TabSpec tab2 = tabHost.newTabSpec("tab2");
+        TabHost.TabSpec tab3 = tabHost.newTabSpec("tab3");
+
+        tab1.setIndicator("Breakfast");
+        tab1.setContent(R.id.tab1);
+        tab2.setIndicator("Lunch").setContent(R.id.tab2);
+        tab3.setIndicator("Dinner").setContent(R.id.tab3);
+        tabHost.addTab(tab1);
+        tabHost.addTab(tab2);
+        tabHost.addTab(tab3);
     }
 
 
@@ -45,4 +67,13 @@ public class dayView extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+//    public void test(View view) {
+//
+////        TabHost tabs = new TabHost(this);
+////        TabHost.TabSpec tab1 = tabs.newTabSpec("1");
+////        tab1.setContent((R.id.tab1));
+//
+//
+//    }
 }
