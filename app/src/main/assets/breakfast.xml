@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!-- Up to date with Z Dementia Menu 2-->
+
+<breakfast>
+
+    <entree>
+        <item> VEGETABLE STRATA </item>
+        <item> PANCAKES </item>
+        <item> SAUSAGE BREAKFAST WRAP  </item>
+        <item> DENVER STRATA  </item>
+        <item> APPLE BELGIAN WAFFLE  </item>
+        <item> FRENCH TOAST  </item>
+        <item> HAM BREAKFAST SAND  </item>
+        <item> VEGETABLE STRATA </item>
+        <item> PANCAKES </item>
+        <item> SAUSAGE BREAKFAST WRAP </item>
+        <item>  DENVER STRATA </item>
+        <item>  APPLE BELGIAN WAFFLE </item>
+        <item>  FRENCH TOAST </item>
+        <item>  HAM BREAKFAST SANDWICH </item>
+    </entree>
+
+    <side1>
+        <option> Scrambled Eggs </option>
+    </side1>
+
+    <side2>
+        <option> Bacon </option>
+        <option> Sausage </option>
+        <option> Hash Browns </option>
+    </side2>
+
+    <cereal>
+        <option> Oatmeal </option>
+        <option> Cream of the West </option>
+    </cereal>
+
+    <fruit>
+        <option> Seasonal </option>
+    </fruit>
+
+</breakfast>

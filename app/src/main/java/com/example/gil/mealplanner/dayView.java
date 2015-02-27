@@ -7,8 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
-import android.widget.TextView;
-import android.widget.Toast;
 
 
 public class dayView extends ActionBarActivity {
@@ -40,6 +38,8 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        new Breakfast().run(this);
     }
 
 
@@ -78,4 +78,5 @@ public class dayView extends ActionBarActivity {
         test.testDisplay();
 
     }
+
 }
