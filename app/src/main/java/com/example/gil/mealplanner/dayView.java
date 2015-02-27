@@ -68,12 +68,4 @@ public class dayView extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    public void test(View view) {
-//
-////        TabHost tabs = new TabHost(this);
-////        TabHost.TabSpec tab1 = tabs.newTabSpec("1");
-////        tab1.setContent((R.id.tab1));
-//
-//
-//    }
 }
