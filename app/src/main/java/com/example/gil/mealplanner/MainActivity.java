@@ -1,8 +1,6 @@
 package com.example.gil.mealplanner;
 
 import android.annotation.TargetApi;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -11,9 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
-import android.widget.Toast;
 
-//import java.util.Calendar;
 
 public class MainActivity extends ActionBarActivity {
 

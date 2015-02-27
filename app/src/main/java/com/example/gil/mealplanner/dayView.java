@@ -1,15 +1,14 @@
 package com.example.gil.mealplanner;
 
-//import android.app.ActionBar;
-//import android.app.TabActivity;
 import android.content.Intent;
-//import android.database.DataSetObserver;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
+import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class dayView extends ActionBarActivity {
@@ -68,4 +67,15 @@ public class dayView extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void test(View view) {
+        DinnerTest test = new DinnerTest();
+
+        test.testEntree();
+        test.testSides();
+        test.testDisplayEandS();
+
+        test.testMeal();
+        test.testDisplay();
+
+    }
 }
