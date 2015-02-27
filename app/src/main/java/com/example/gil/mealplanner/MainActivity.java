@@ -23,61 +23,64 @@ public class MainActivity extends ActionBarActivity {
 
         cal = (CalendarView) findViewById(R.id.calendarView);
 
+        final long date = cal.getDate();
+
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
 
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
+                if (cal.getDate() != date) {
 //                TODO Auto-generated method stub
 
 
-                Context context = cal.getContext();
+                    Context context = cal.getContext();
 
-                Intent intent = new Intent();
-                intent.setClass(context, dayView.class);
-                String sMonth = new String();
-                switch (month)
-                {
-                    case 0:
-                        sMonth = "January";
-                        break;
-                    case 1:
-                        sMonth = "February";
-                        break;
-                    case 2:
-                        sMonth = "March";
-                        break;
-                    case 3:
-                        sMonth = "April";
-                        break;
-                    case 4:
-                        sMonth = "May";
-                        break;
-                    case 5:
-                        sMonth = "June";
-                        break;
-                    case 6:
-                        sMonth = "July";
-                        break;
-                    case 7:
-                        sMonth = "August";
-                        break;
-                    case 8:
-                        sMonth = "September";
-                        break;
-                    case 9:
-                        sMonth = "October";
-                        break;
-                    case 10:
-                        sMonth = "November";
-                        break;
-                    case 11:
-                        sMonth = "December";
-                        break;
+                    Intent intent = new Intent();
+                    intent.setClass(context, dayView.class);
+                    String sMonth = new String();
+                    switch (month) {
+                        case 0:
+                            sMonth = "January";
+                            break;
+                        case 1:
+                            sMonth = "February";
+                            break;
+                        case 2:
+                            sMonth = "March";
+                            break;
+                        case 3:
+                            sMonth = "April";
+                            break;
+                        case 4:
+                            sMonth = "May";
+                            break;
+                        case 5:
+                            sMonth = "June";
+                            break;
+                        case 6:
+                            sMonth = "July";
+                            break;
+                        case 7:
+                            sMonth = "August";
+                            break;
+                        case 8:
+                            sMonth = "September";
+                            break;
+                        case 9:
+                            sMonth = "October";
+                            break;
+                        case 10:
+                            sMonth = "November";
+                            break;
+                        case 11:
+                            sMonth = "December";
+                            break;
+                    }
+
+                    intent.putExtra("date", dayOfMonth + " " + sMonth + " " + year);
+                    startActivity(intent);
                 }
-
-                intent.putExtra("date", dayOfMonth + " " + sMonth + " " + year);
-                startActivity(intent);
             }
         });
     }
