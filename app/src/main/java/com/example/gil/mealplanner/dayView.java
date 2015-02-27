@@ -1,14 +1,10 @@
 package com.example.gil.mealplanner;
 
-//import android.app.ActionBar;
-//import android.app.TabActivity;
 import android.content.Intent;
-//import android.database.DataSetObserver;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.TabHost;
 
 
