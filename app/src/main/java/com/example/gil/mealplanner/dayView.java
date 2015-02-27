@@ -17,7 +17,6 @@ public class dayView extends ActionBarActivity {
         setContentView(R.layout.activity_day_view);
 
         Intent intent =  getIntent();
-        //String action = intent.getAction();
 
         String date= intent.getStringExtra("date");
         setTitle(date);
