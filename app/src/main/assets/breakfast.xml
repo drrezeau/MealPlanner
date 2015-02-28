@@ -4,20 +4,13 @@
 <breakfast>
 
     <entree>
-        <item> VEGETABLE STRATA </item>
-        <item> PANCAKES </item>
-        <item> SAUSAGE BREAKFAST WRAP  </item>
-        <item> DENVER STRATA  </item>
-        <item> APPLE BELGIAN WAFFLE  </item>
-        <item> FRENCH TOAST  </item>
-        <item> HAM BREAKFAST SAND  </item>
-        <item> VEGETABLE STRATA </item>
-        <item> PANCAKES </item>
-        <item> SAUSAGE BREAKFAST WRAP </item>
-        <item>  DENVER STRATA </item>
-        <item>  APPLE BELGIAN WAFFLE </item>
-        <item>  FRENCH TOAST </item>
-        <item>  HAM BREAKFAST SANDWICH </item>
+        <option> Vegetable Strata </option>
+        <option> Pancakes </option>
+        <option> Sausage Breakfast Wrap </option>
+        <option> Denver Strata </option>
+        <option> Apple Belgian Waffle </option>
+        <option> French Toast </option>
+        <option> Ham Breakfast Sand </option>
     </entree>
 
     <side1>
