@@ -1,12 +1,14 @@
 package com.example.gil.mealplanner;
 
+import junit.framework.TestCase;
+
 import static junit.framework.Assert.assertEquals;
 
 /**
  * Lunch getting and setting testing.
  * Created by Shane on 2/28/2015.
  */
-public class LunchTest extends Lunch{
+public class LunchTest extends TestCase {
     Lunch lunch = new Lunch();
 
     public void testSides() {
