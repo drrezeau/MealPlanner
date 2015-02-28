@@ -24,7 +24,6 @@ public class MainActivity extends ActionBarActivity {
         cal = (CalendarView) findViewById(R.id.calendarView);
 
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-
             long date = cal.getDate();
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
@@ -78,6 +77,7 @@ public class MainActivity extends ActionBarActivity {
                     }
 
                     date = cal.getDate();
+
                     intent.putExtra("date", dayOfMonth + " " + sMonth + " " + year);
                     startActivity(intent);
                 }

@@ -1,0 +1,184 @@
+<?xml version="1.0"?>
+<!-- Up to date with Z Dementia Menu 2-->
+
+<lunch>
+    <entree>
+        <option> CHICKEN CORDON BLEU </option>
+        <option> ROAST BEEF </option>
+        <option> BBQ PORK </option>
+        <option> BREADED COD </option>
+        <option> ITALIAN HAM AND PEAS </option>
+        <option> CHICKEN IN A HUNTER SAUCE </option>
+        <option> NEW YORK STEAK </option>
+
+        <option> ROAST PORK </option>
+        <option> SWISS STEAK </option>
+        <option> CHICKEN AND DUMPLINGS </option>
+        <option> ORANGE BEEF </option>
+        <option> TILLAPIA </option>
+        <option> PRIME RIB </option>
+        <option> CHICKEN ALFREDO </option>
+
+        <option> POT ROAST </option>
+        <option> PORK CHOPS </option>
+        <option> COUNTRY FRIED STEAK </option>
+        <option> CRAN DIJON CHIX </option>
+        <option> BAKED HAM </option>
+        <option> TERIYAKI CHICKEN THIGHS </option>
+        <option> BAKED COD </option>
+
+        <option> TURKEY DINNER </option>
+        <option> LASAGNA </option>
+        <option> BEEF BRISKET </option>
+        <option> HAM STEAK </option>
+        <option> BEEF STROGANOFF </option>
+        <option> POACHED SALMON/BERNAISE </option>
+        <option> LIVER AND ONIONS </option>
+
+        <option> VEAL PARM </option>
+        <option> PORK CHOPS </option>
+        <option> SHRIMP AND BEEF MEDALLIANS </option>
+        <option> MEAT LOAF </option>
+        <option> FRIED CHICKEN </option>
+        <option> SEAFOOD ALFREDO </option>
+        <option> PEPPER STEAK </option>
+
+    </entree>
+
+    <salad>
+        <option> SUMMER PASTA </option>
+        <option> CUCUMBER </option>
+        <option> COLE SLAW </option>
+        <option> THREE BEAN </option>
+        <option> CORN </option>
+        <option> JELLO </option>
+        <option> MARINATED MUSHROOM </option>
+        <option> CHEF </option>
+        <option> SPINACH </option>
+        <option> CARROT SALAD </option>
+        <option> ORIENTAL </option>
+        <option> DILL CUCUMBER TOMATO </option>
+        <option> MACARONI </option>
+        <option> SEAFOOD SALAD </option>
+        <option> CAULIFLOWER AND PEA </option>
+        <option> MAR VEG </option>
+        <option> GREEN </option>
+        <option> CUCUMBER </option>
+        <option> CHEF </option>
+        <option> SUNSHINE </option>
+        <option> MACARONI </option>
+        <option> CRANBERRY </option>
+        <option> HAM AND PINEAPPLE </option>
+        <option> CARROT </option>
+        <option> MAC SALAD </option>
+        <option> ORIENTAL </option>
+        <option> SPINach </option>
+        <option> BROCCOLI AND TOMATO </option>
+        <option> MARINATED VEGETABLE </option>
+        <option> PICCADILLY PEACH </option>
+        <option> TOSSED </option>
+        <option> SELECTION </option>
+        <option> WALDORF </option>
+        <option> CAESAR </option>
+        <option> MARINATED ASP </option>
+    </salad>
+
+    <starch>
+        <option> RICE </option>
+        <option> MASHED </option>
+        <option> SCALLOP POTATO </option>
+        <option> BAKED </option>
+        <option> FETTUCCINE </option>
+        <option> MASHED POTATO </option>
+        <option> BAKED </option>
+        <option> STEAMED POT </option>
+        <option> ROASTED RED </option>
+        <option> FETTUCCINE </option>
+        <option> POTATO W/VEG </option>
+        <option> AU GRATIN </option>
+        <option> YAMS </option>
+        <option> RICE </option>
+        <option> ROASTED REDS </option>
+        <option> POTATO RSTED </option>
+        <option> POTATO W/ONION </option>
+        <option> BUTTER NOODLE </option>
+        <option>ANGLE HAIR PASTA </option>
+        <option> JOHNNY SPUDS </option>
+        <option> FETTUCCINE </option>
+    </starch>
+
+    <vegetable>
+        <option> ZUCHINI </option>
+        <option> CARROTS </option>
+        <option> CORN </option>
+        <option> GREEN BEANS </option>
+        <option> PEAS </option>
+        <option> SELECT VEGETABLE </option>
+        <option> MEDLEY </option>
+        <option> CORN </option>
+        <option> PEAS </option>
+        <option> STIR FRY </option>
+        <option> PEAS </option>
+        <option> VEG/ASPARAGUS </option>
+        <option> FRENCH CUT GRN BNS </option>
+        <option> WITH ROAST </option>
+        <option> CORN </option>
+        <option> PEAS </option>
+        <option> CARROTS </option>
+        <option> VEGETABLE </option>
+        <option> ORIENTAL </option>
+        <option> BROCOLI </option>
+        <option> CORN </option>
+        <option> ZUCCINI </option>
+        <option> GREEN BEANS </option>
+        <option> SQUASH </option>
+        <option> BROCOLI </option>
+        <option> VEG/ASP </option>
+        <option> CAUL CHEESE </option>
+        <option> BROCCOLI CHEESE </option>
+        <option> CORN AND CARROTS </option>
+        <option> PEAS </option>
+        <option> BEAN CASSEROLE </option>
+        <option> ITALEAN VEG </option>
+        <option> ORIENTAL </option>
+    </vegetable>
+
+   <dessert>
+       <option> RHUBARB PIE </option>
+       <option> ANGEL FOOD </option>
+       <option> CHOCOLATE CAKE </option>
+       <option> TIRAMIZU </option>
+       <option> WHITE CAKE </option>
+       <option> PEACH PIE </option>
+       <option> APPLE CRISP </option>
+       <option> BLUE BERRY PIE </option>
+       <option> SPICE CAKE </option>
+       <option> PEACH MELBA </option>
+       <option> YELLOW CAKE </option>
+       <option> CHOC CREAM PIE </option>
+       <option> BREAD PUDDING </option>
+       <option> UPSIDE DOWN CAKE </option>
+       <option> RHUBARB PIE </option>
+       <option> APPLE CRISP </option>
+       <option> CREAM PIE </option>
+       <option> CARROT CAKE </option>
+       <option> CREAM PUFFS </option>
+       <option> BROWNIE SUNDAE </option>
+       <option> LEMON MERINGUE </option>
+       <option> PUMPKIN PIE </option>
+       <option> ANGEL FOOD </option>
+       <option> S'MORE DELIGHT </option>
+       <option> CREAM PUFFS </option>
+       <option> RAISIN BARS </option>
+       <option> GRASS HOPPER DELIGHT </option>
+       <option> APPLE SPICE CAKE </option>
+       <option> FRUIT PIE </option>
+       <option> CHOC /ZUKE CAKE </option>
+       <option> LEMON MERINGUE </option>
+       <option> TROPICAL CHIFFON </option>
+       <option> APPLE PIE </option>
+       <option> ITALIAN CREAM CAKE </option>
+       <option> SELECTION </option>
+   </dessert>
+
+</lunch>
