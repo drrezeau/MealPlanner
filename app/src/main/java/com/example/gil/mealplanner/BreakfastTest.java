@@ -3,7 +3,7 @@ package com.example.gil.mealplanner;
 import junit.framework.TestCase;
 
 /**
- * Lunch getting and setting testing.
+ * Breakfast getting and setting testing.
  * Created by Kendall */
 public class BreakfastTest extends TestCase {
     Breakfast breakfast = new Breakfast();
