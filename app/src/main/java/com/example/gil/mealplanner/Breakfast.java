@@ -72,8 +72,7 @@ public class Breakfast {
         try {
 
             //Builds the XML Document Buildera
-            DocumentBuilderFactory DBF = DocumentBuilderFactory.newInstance();
-            DocumentBuilder DB = DBF.newDocumentBuilder();
+            DocumentBuilder DB = builderFactory.newDocumentBuilder();
 
             InputStream is = context.getAssets().open("breakfast.xml");
 
@@ -81,13 +80,15 @@ public class Breakfast {
 
             System.out.println(":)");
             NodeList nListEntry = dom.getElementsByTagName("entree");
+            System.out.println("0");
             Element entryElement = (Element) nListEntry.item(0);
-
-            NodeList nListEntry1 = entryElement.getElementsByTagName("item");
+            System.out.println("1");
+            NodeList nListEntry1 = entryElement.getElementsByTagName("option");
+            System.out.println("2");
             Element entryElement1 = (Element) nListEntry1.item(1);
-
+            System.out.println("3");
             System.out.println("lksuhfoisdfaoisdfhsao" + entryElement1.getTextContent());
-
+            System.out.println("4");
 
         }catch (IOException ex) {
             System.out.println("1COULDN'T OPEN FILE??????????????????????????????????");
