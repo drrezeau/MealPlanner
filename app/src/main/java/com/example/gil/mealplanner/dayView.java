@@ -8,7 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
 
-
 public class dayView extends ActionBarActivity {
 
     @Override
@@ -75,6 +74,13 @@ public class dayView extends ActionBarActivity {
 
         test.testMeal();
         test.testDisplay();
+
+        BreakfastTest test1 = new BreakfastTest();
+        test1.testEntree();
+        test1.testSides();
+        test1.testMeal();
+        test1.testDisplayEandS();
+
 
     }
 

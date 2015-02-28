@@ -23,45 +23,53 @@ public class Breakfast {
     private String fruit;
 
     //Getters
-    String getEntree() {
+    public String getEntree() {
         return entree;
     }
 
-    String getSide1() {
+    public String getSide1() {
         return side1;
     }
 
-    String getSide2() {
+    public String getSide2() {
         return side2;
     }
 
-    String getCereal() {
+    public String getCereal() {
         return cereal;
     }
 
-    String getFruit() {
+    public String getFruit() {
         return fruit;
     }
 
     //Setters
-    void setEntree(String temp) {
+    public void setEntree(String temp) {
         entree = temp;
     }
 
-    void setSide1(String temp) {
+    public void setSide1(String temp) {
         side1 = temp;
     }
 
-    void setSide2(String temp) {
+    public void setSide2(String temp) {
         side2 = temp;
     }
 
-    void setCereal(String temp) {
+    public void setCereal(String temp) {
         cereal = temp;
     }
 
-    void setFruit(String temp) {
+   public void setFruit(String temp) {
         fruit = temp;
+    }
+
+    public void setMeal(String entree, String side1, String side2, String cereal, String fruit) {
+        setEntree(entree);
+        setSide2(side2);
+        setSide1(side1);
+        setCereal(cereal);
+        setFruit(fruit);
     }
 
     public void run(Context context) {
