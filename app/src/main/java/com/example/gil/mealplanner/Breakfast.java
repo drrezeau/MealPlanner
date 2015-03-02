@@ -8,14 +8,12 @@ import org.w3c.dom.Element;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
-/**
- * Created by Kendall on 2/25/2015.
- */
-public class Breakfast {
+public class Breakfast extends Meal {
     private String entree;
     private String side1;
     private String side2;
@@ -24,7 +22,7 @@ public class Breakfast {
 
     //Getters
     public String getEntree() {
-        return entree;
+   return entree;
     }
 
     public String getSide1() {
@@ -72,67 +70,4 @@ public class Breakfast {
         setFruit(fruit);
     }
 
-    /*
-    * Parameters: this
-    *
-    * Function will return an array of options
-    */
-
-    public String[] getArrayOfOptions(Context context) {
-
-        String [] array = new String[35];
-        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-
-        try {
-            DocumentBuilder DB = builderFactory.newDocumentBuilder();
-            InputStream is = context.getAssets().open("breakfast.xml");
-            Document dom = DB.parse(is);
-
-            NodeList nListEntry = dom.getElementsByTagName("entree");
-            Element entryElement = (Element) nListEntry.item(0);
-            NodeList nListEntry1 = entryElement.getElementsByTagName("option");
-
-            for (int i = 0; i < nListEntry1.getLength() ; i++) {
-                Element option = (Element) nListEntry1.item(i);
-                array[i] = option.getTextContent();
-                System.out.println("Meal: " + option.getTextContent());
-            }
-
-        } catch (Exception ex) {
-            System.out.println("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!");
-        }
-
-        return array;
-    }
-
-    public void run(Context context) {
-
-        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
-        try {
-            //Builds the XML Document Buildera
-            DocumentBuilder DB = builderFactory.newDocumentBuilder();
-
-            InputStream is = context.getAssets().open("breakfast.xml");
-
-            Document dom = DB.parse(is);
-
-            System.out.println(":)");
-            NodeList nListEntry = dom.getElementsByTagName("entree");
-            System.out.println("0");
-            Element entryElement = (Element) nListEntry.item(0);
-            System.out.println("1");
-            NodeList nListEntry1 = entryElement.getElementsByTagName("option");
-            System.out.println("2");
-            Element entryElement1 = (Element) nListEntry1.item(1);
-            System.out.println("3");
-            System.out.println("lksuhfoisdfaoisdfhsao" + entryElement1.getTextContent());
-            System.out.println("4");
-
-        }catch (IOException ex) {
-            System.out.println("1COULDN'T OPEN FILE??????????????????????????????????");
-        }
-        catch (Exception ex) {
-            System.out.println("3COULDN'T OPEN FILE??????????????????????????????????");
-        }
-    }
 }

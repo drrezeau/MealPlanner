@@ -1,54 +1,31 @@
 package com.example.gil.mealplanner;
 
-
-/**
- * Created by Gil on 2/27/15.
- */
-public class Dinner {
+public class Dinner extends Meal{
     private String entree;
     private String side1;
     private String side2;
     private String veg;
     private String dessert;
 
+    //Setters
     public String getEntree() {
         return entree;
-    }
-
-    public void setEntree(String entree) {
-        this.entree = entree;
     }
 
     public String getSide1() {
         return side1;
     }
 
-    public void setSide1(String side1) {
-        this.side1 = side1;
-    }
-
     public String getSide2() {
         return side2;
-    }
-
-    public void setSide2(String side2) {
-        this.side2 = side2;
     }
 
     public String getVeg() {
         return veg;
     }
 
-    public void setVeg(String veg) {
-        this.veg = veg;
-    }
-
     public String getDessert() {
         return dessert;
-    }
-
-    public void setDessert(String dessert) {
-        this.dessert = dessert;
     }
 
     public String returnMeal() {
@@ -58,6 +35,27 @@ public class Dinner {
                 + "\nVeggie: " + veg
                 + "\nDessert: "+ dessert + "\n";
         return meal;
+    }
+
+    //Getters
+    public void setEntree(String entree) {
+        this.entree = entree;
+    }
+
+    public void setSide1(String side1) {
+        this.side1 = side1;
+    }
+
+    public void setSide2(String side2) {
+        this.side1 = side2;
+    }
+
+    public void setVeg(String veg) {
+        this.veg = veg;
+    }
+
+    public void setDessert(String dessert) {
+        this.dessert = dessert;
     }
 
     public void setMeal(String entree, String side1, String side2, String veg, String dessert) {

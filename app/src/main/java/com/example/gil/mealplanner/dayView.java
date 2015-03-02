@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TabHost;
 
+import java.util.ArrayList;
+
 public class dayView extends ActionBarActivity {
 
     @Override
@@ -27,8 +29,7 @@ public class dayView extends ActionBarActivity {
         TabHost.TabSpec tab2 = tabHost.newTabSpec("tab2");
         TabHost.TabSpec tab3 = tabHost.newTabSpec("tab3");
 
-        tab1.setIndicator("Breakfast");
-        tab1.setContent(R.id.tab1);
+        tab1.setIndicator("Breakfast").setContent(R.id.tab1);
         tab2.setIndicator("Lunch").setContent(R.id.tab2);
         tab3.setIndicator("Dinner").setContent(R.id.tab3);
         tabHost.addTab(tab1);
@@ -36,11 +37,11 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab3);
 
         Breakfast breakfast = new Breakfast();
-
-        String[] array = breakfast.getArrayOfOptions(this);
-        //for (String temp : array) {
-           // System.out.println(temp);
-        //}
+        ArrayList<String> array;
+        array = breakfast.getArrayOfOptions(this, "soup", "dinner");
+        for (String temp : array) {
+           System.out.println(temp);
+        }
     }
 
     @Override

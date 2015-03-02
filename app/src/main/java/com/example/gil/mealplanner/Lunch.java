@@ -1,49 +1,48 @@
 package com.example.gil.mealplanner;
 
-/**
- * Created by Shane on 2/28/2015.
- */
-public class Lunch {
+public class Lunch extends Meal{
     private String entree;
     private String salad;
     private String starch;
     private String veg;
     private String dessert;
 
+    //Getters
     public String getEntree() {
         return entree;
-    }
-
-    public void setEntree(String entree) {
-        this.entree = entree;
     }
 
     public String getSalad() {
         return salad;
     }
 
-    public void setSalad(String salad) {
-        this.salad = salad;
-    }
-
     public String getStarch() {
         return starch;
-    }
-
-    public void setStarch(String starch) {
-        this.starch = starch;
     }
 
     public String getVeg() {
         return veg;
     }
 
-    public void setVeg(String veg) {
-        this.veg = veg;
-    }
-
     public String getDessert() {
         return dessert;
+    }
+
+    //Setters
+    public void setEntree(String entree) {
+        this.entree = entree;
+    }
+
+    public void setSalad(String salad) {
+        this.salad = salad;
+    }
+
+    public void setStarch(String starch) {
+        this.starch = starch;
+    }
+
+    public void setVeg(String veg) {
+        this.veg = veg;
     }
 
     public void setDessert(String dessert) {
