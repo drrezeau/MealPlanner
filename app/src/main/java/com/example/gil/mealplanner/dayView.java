@@ -72,9 +72,12 @@ public class dayView extends ActionBarActivity {
                                          String item = ((TextView) view).getText().toString();
 
                                          Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
-
+                                         Intent intent = new Intent(dayView.this, activity_option_view.class);
+                                         startActivity(intent);
                                      }
                                  });
+
+
 
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();
