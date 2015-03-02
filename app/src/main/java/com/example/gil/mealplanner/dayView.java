@@ -20,10 +20,8 @@ public class dayView extends ActionBarActivity {
         String date= intent.getStringExtra("date");
         setTitle(date);
 
-
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();
-
 
         TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
         TabHost.TabSpec tab2 = tabHost.newTabSpec("tab2");
@@ -37,11 +35,13 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
 
-        new Breakfast().run(this);
+        Breakfast breakfast = new Breakfast();
+
+        String[] array = breakfast.getArrayOfOptions(this);
+        //for (String temp : array) {
+           // System.out.println(temp);
+        //}
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -65,15 +65,16 @@ public class dayView extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     public void test(View view) {
-        DinnerTest test = new DinnerTest();
+       /* DinnerTest test = new DinnerTest();
 
         test.testEntree();
         test.testSides();
         test.testDisplayEandS();
 
         test.testMeal();
-        test.testDisplay();
+        test.testDisplay();*/
     }
 
 }

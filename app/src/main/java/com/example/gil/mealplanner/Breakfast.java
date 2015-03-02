@@ -72,13 +72,43 @@ public class Breakfast {
         setFruit(fruit);
     }
 
+    /*
+    * Parameters: this
+    *
+    * Function will return an array of options
+    */
+
+    public String[] getArrayOfOptions(Context context) {
+
+        String [] array = new String[35];
+        DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
+
+        try {
+            DocumentBuilder DB = builderFactory.newDocumentBuilder();
+            InputStream is = context.getAssets().open("breakfast.xml");
+            Document dom = DB.parse(is);
+
+            NodeList nListEntry = dom.getElementsByTagName("entree");
+            Element entryElement = (Element) nListEntry.item(0);
+            NodeList nListEntry1 = entryElement.getElementsByTagName("option");
+
+            for (int i = 0; i < nListEntry1.getLength() ; i++) {
+                Element option = (Element) nListEntry1.item(i);
+                array[i] = option.getTextContent();
+                System.out.println("Meal: " + option.getTextContent());
+            }
+
+        } catch (Exception ex) {
+            System.out.println("NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!!!!!!");
+        }
+
+        return array;
+    }
+
     public void run(Context context) {
-
-
 
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         try {
-
             //Builds the XML Document Buildera
             DocumentBuilder DB = builderFactory.newDocumentBuilder();
 
