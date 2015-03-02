@@ -6,7 +6,12 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -22,10 +27,59 @@ public class dayView extends ActionBarActivity {
         String date= intent.getStringExtra("date");
         setTitle(date);
 
+
+        //listview stuff - still needs a new activity
+       Breakfast breakfast = new Breakfast();
+        ArrayList<String> array;
+        array = breakfast.getArrayOfOptions(this, "entree", "breakfast");
+
+        ListView l = (ListView) findViewById(R.id.breakfastList);
+        ArrayAdapter<String> adapter;
+
+        adapter = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array);
+        l.setAdapter(adapter);
+
+
+        Lunch lunch = new Lunch();
+        ArrayList<String> array1;
+        array1 = lunch.getArrayOfOptions(this, "salad", "lunch");
+
+        ListView l1 = (ListView) findViewById(R.id.lunchList);
+        ArrayAdapter<String> adapter1;
+
+        adapter1 = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array1);
+        l1.setAdapter(adapter1);
+
+        Dinner dinner = new Dinner();
+        ArrayList<String> array2;
+        array2 = dinner.getArrayOfOptions(this, "dessert", "dinner");
+
+        ListView l2 = (ListView) findViewById(R.id.dinnerList);
+        ArrayAdapter<String> adapter2;
+
+        adapter2 = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array2);
+        l2.setAdapter(adapter2);
+
+        // More messing around
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                     @Override
+                                     public void onItemClick(AdapterView<?> parent, View view, int position,
+                                                             long id) {
+
+                                         String item = ((TextView) view).getText().toString();
+
+                                         Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
+
+                                     }
+                                 });
+
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();
 
-        TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1");
+        TabHost.TabSpec tab1 = tabHost.newTabSpec("tab1"); // Can also add the images here
         TabHost.TabSpec tab2 = tabHost.newTabSpec("tab2");
         TabHost.TabSpec tab3 = tabHost.newTabSpec("tab3");
 
@@ -35,13 +89,6 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
-
-        Breakfast breakfast = new Breakfast();
-        ArrayList<String> array;
-        array = breakfast.getArrayOfOptions(this, "soup", "dinner");
-        for (String temp : array) {
-           System.out.println(temp);
-        }
     }
 
     @Override

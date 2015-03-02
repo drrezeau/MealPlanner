@@ -20,6 +20,10 @@
             android:name=".dayView"
             android:label="@string/title_activity_day_view" >
         </activity>
+        <activity
+            android:name=".activity_option_view"
+            android:label="@string/title_activity_activity_option_view" >
+        </activity>
     </application>
 
 </manifest>
