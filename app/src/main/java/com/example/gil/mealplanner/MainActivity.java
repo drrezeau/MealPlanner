@@ -7,12 +7,8 @@ import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.CalendarView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -148,36 +144,3 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 }
-
-
-/*switch (item.getItemId()) {
-            case R.id.fort_worth:
-                buildingNumber = 0;
-                break;
-            case R.id.el_paso:
-                buildingNumber = 1;
-                break;
-            case R.id.snyder:
-                buildingNumber = 2;
-                break;
-            case R.id.amarillo:
-                buildingNumber = 3;
-                break;
-            case R.id.hobbs:
-                buildingNumber = 4;
-                break;
-            case R.id.los_lunas:
-                buildingNumber = 5;
-                break;
-            case R.id.carlsbad:
-                buildingNumber = 6;
-                break;
-            case R.id.artesia:
-                buildingNumber = 7;
-                break;
-            case R.id.lovington:
-                buildingNumber = 8;
-                break;
-            default:
-                return super.onOptionsItemSelected(item);
-        }*/
