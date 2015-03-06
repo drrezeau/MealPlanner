@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">Meal Planner</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="buildings">Buildings</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_day_view">dayView</string>
     <string name="title_activity_mine">mine</string>
