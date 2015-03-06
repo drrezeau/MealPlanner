@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
+import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
@@ -108,36 +109,41 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
             case R.id.fort_worth:
+                Toast.makeText(getApplicationContext(), "Fort Worth Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 0;
                 return true;
             case R.id.el_paso:
+                Toast.makeText(getApplicationContext(), "El Paso Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 1;
                 return true;
             case R.id.snyder:
+                Toast.makeText(getApplicationContext(), "Fort Worth Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 2;
                 return true;
             case R.id.amarillo:
+                Toast.makeText(getApplicationContext(), "Amarillo Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 3;
                 return true;
             case R.id.hobbs:
+                Toast.makeText(getApplicationContext(), "Hobbs Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 4;
                 return true;
             case R.id.los_lunas:
+                Toast.makeText(getApplicationContext(), "Los Lunas Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 5;
                 return true;
             case R.id.carlsbad:
+                Toast.makeText(getApplicationContext(), "Carlsbad Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 6;
                 return true;
             case R.id.artesia:
+                Toast.makeText(getApplicationContext(), "Artesia Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 7;
                 return true;
             case R.id.lovington:
+                Toast.makeText(getApplicationContext(), "Lovington Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 8;
                 return true;
         }
