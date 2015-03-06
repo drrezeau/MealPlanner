@@ -1,9 +1,13 @@
 package com.example.gil.mealplanner;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
+
+import java.util.StringTokenizer;
 
 
 public class activity_option_view extends ActionBarActivity {
@@ -12,7 +16,29 @@ public class activity_option_view extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_option_view);
+
+        Intent intent = getIntent();
+        String currentOption = intent.getStringExtra("currentOption"); // what the current option is
+        String index = intent.getStringExtra("index"); //
+        setTitle(currentOption); // 0 the first tag with the xml, 1 for the second, etc.
+        Toast.makeText(getBaseContext(), currentOption + ": " + index, Toast.LENGTH_LONG).show();
+
+        String meal = intent.getStringExtra("meal");
+        switch (meal)
+        {
+            case "breakfast":
+
+                break;
+            case "lunch":
+
+                break;
+            case "dinner":
+
+                break;
+        }
     }
+
+
 
 
     @Override

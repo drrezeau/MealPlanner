@@ -10,7 +10,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
 
-
 public class MainActivity extends ActionBarActivity {
 
     CalendarView cal;
@@ -29,8 +28,6 @@ public class MainActivity extends ActionBarActivity {
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
                 if (cal.getDate() != date) {
-//                TODO Auto-generated method stub
-
 
                     Context context = cal.getContext();
 

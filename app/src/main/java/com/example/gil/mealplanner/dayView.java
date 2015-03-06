@@ -24,61 +24,13 @@ public class dayView extends ActionBarActivity {
 
         Intent intent =  getIntent();
 
+        //sets the title to the given date
         String date= intent.getStringExtra("date");
         setTitle(date);
 
-
-        //listview stuff - still needs a new activity
-       Breakfast breakfast = new Breakfast();
-        ArrayList<String> array;
-        array = breakfast.getArrayOfOptions(this, "entree", "breakfast");
-
-        ListView l = (ListView) findViewById(R.id.breakfastList);
-        ArrayAdapter<String> adapter;
-
-        adapter = new ArrayAdapter<>(dayView.this,
-                android.R.layout.simple_list_item_1, array);
-        l.setAdapter(adapter);
-
-
-        Lunch lunch = new Lunch();
-        ArrayList<String> array1;
-        array1 = lunch.getArrayOfOptions(this, "salad", "lunch");
-
-        ListView l1 = (ListView) findViewById(R.id.lunchList);
-        ArrayAdapter<String> adapter1;
-
-        adapter1 = new ArrayAdapter<>(dayView.this,
-                android.R.layout.simple_list_item_1, array1);
-        l1.setAdapter(adapter1);
-
-        Dinner dinner = new Dinner();
-        ArrayList<String> array2;
-        array2 = dinner.getArrayOfOptions(this, "dessert", "dinner");
-
-        ListView l2 = (ListView) findViewById(R.id.dinnerList);
-        ArrayAdapter<String> adapter2;
-
-        adapter2 = new ArrayAdapter<>(dayView.this,
-                android.R.layout.simple_list_item_1, array2);
-        l2.setAdapter(adapter2);
-
-        // More messing around
-        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                                     @Override
-                                     public void onItemClick(AdapterView<?> parent, View view, int position,
-                                                             long id) {
-
-                                         String item = ((TextView) view).getText().toString();
-
-                                         Toast.makeText(getBaseContext(), item, Toast.LENGTH_LONG).show();
-                                         Intent intent = new Intent(dayView.this, activity_option_view.class);
-                                         startActivity(intent);
-                                     }
-                                 });
-
-
-
+        /*************************************************************************
+        * Creates the 3 tabs
+        *************************************************************************/
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();
 
@@ -92,6 +44,105 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab1);
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
+
+        /*************************************************************************
+         * I will know what tab im on based on what listview's setonlciklistener is called
+         *************************************************************************/
+        ArrayList<String> array; // <-------- David. populate this array with the breakfast info online
+
+        Breakfast breakfast = new Breakfast();
+        array = breakfast.getArrayOfOptions(this, "entree", "breakfast");
+
+        ListView l = (ListView) findViewById(R.id.breakfastList);
+        ArrayAdapter<String> adapter;
+
+        adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
+        l.setAdapter(adapter);
+
+        //onClickListener of the first tab
+        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getBaseContext(), String.valueOf(id), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(dayView.this, activity_option_view.class);
+                Integer i = position;  // The position of the item in the listView
+
+                String item = ((TextView) view).getText().toString(); //
+
+                intent.putExtra("meal", item);
+                intent.putExtra("option", i.toString());
+                startActivity(intent);
+            }
+        });
+
+
+        /*************************************************************************
+         * I will know what tab im on based on what listview's setonlciklistener is called
+         *************************************************************************/
+        Lunch lunch = new Lunch();
+        ArrayList<String> array1; // <-------- and this
+        array1 = lunch.getArrayOfOptions(this, "salad", "lunch");
+
+        ListView l1 = (ListView) findViewById(R.id.lunchList);
+        ArrayAdapter<String> adapter1;
+
+        adapter1 = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array1);
+        l1.setAdapter(adapter1);
+
+        //onClickListener of the second tab
+        l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getBaseContext(), String.valueOf(id), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(dayView.this, activity_option_view.class);
+                Integer i = position;  // The position of the item in the listView
+
+                String item = ((TextView) view).getText().toString(); //
+
+                intent.putExtra("currentOption", item);
+                intent.putExtra("index", i.toString());
+                intent.putExtra("meal", "lunch");
+                startActivity(intent);
+            }
+        });
+
+
+        /*************************************************************************
+         * I will know what tab im on based on what listview's setonlciklistener is called
+         *************************************************************************/
+        Dinner dinner = new Dinner();
+        ArrayList<String> array2; // <-------- and this
+        array2 = dinner.getArrayOfOptions(this, "dessert", "dinner");
+
+        ListView l2 = (ListView) findViewById(R.id.dinnerList);
+        ArrayAdapter<String> adapter2;
+
+        adapter2 = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array2);
+        l2.setAdapter(adapter2);
+
+        //onClickListener of the third tab
+        l2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getBaseContext(), String.valueOf(id), Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent(dayView.this, activity_option_view.class);
+                Integer i = position;  // The position of the item in the listView
+
+                String item = ((TextView) view).getText().toString(); //
+
+                intent.putExtra("meal", item);
+                intent.putExtra("option", i.toString());
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -129,3 +180,28 @@ public class dayView extends ActionBarActivity {
     }
 
 }
+
+
+/*
+        Lunch lunch = new Lunch();
+        ArrayList<String> array1;
+        array1 = lunch.getArrayOfOptions(this, "salad", "lunch");
+
+        ListView l1 = (ListView) findViewById(R.id.lunchList);
+        ArrayAdapter<String> adapter1;
+
+        adapter1 = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array1);
+        l1.setAdapter(adapter1);
+
+        Dinner dinner = new Dinner();
+        ArrayList<String> array2;
+        array2 = dinner.getArrayOfOptions(this, "dessert", "dinner");
+
+        ListView l2 = (ListView) findViewById(R.id.dinnerList);
+        ArrayAdapter<String> adapter2;
+
+        adapter2 = new ArrayAdapter<>(dayView.this,
+                android.R.layout.simple_list_item_1, array2);
+        l2.setAdapter(adapter2);
+*/

@@ -4,6 +4,12 @@
 <breakfast>
 
     <entree>
+        <!--<option> Entree </option>
+        <option> Side1 </option>
+        <option> Side2 </option>
+        <option> Cereal </option>
+        <option> Fruit </option>-->
+
         <option> Vegetable Strata </option>
         <option> Pancakes </option>
         <option> Sausage Breakfast Wrap </option>
