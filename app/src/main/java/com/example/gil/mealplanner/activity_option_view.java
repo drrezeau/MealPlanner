@@ -27,13 +27,10 @@ public class activity_option_view extends ActionBarActivity {
         switch (meal)
         {
             case "breakfast":
-
                 break;
             case "lunch":
-
                 break;
             case "dinner":
-
                 break;
         }
     }
