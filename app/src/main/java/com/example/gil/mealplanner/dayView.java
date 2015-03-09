@@ -71,7 +71,7 @@ public class dayView extends ActionBarActivity {
 
                 String item = ((TextView) view).getText().toString(); //
 
-                intent.putExtra("meal", item);
+                intent.putExtra("meal", "breakfast");
                 intent.putExtra("option", i.toString());
                 startActivity(intent);
             }
@@ -138,7 +138,7 @@ public class dayView extends ActionBarActivity {
 
                 String item = ((TextView) view).getText().toString(); //
 
-                intent.putExtra("meal", item);
+                intent.putExtra("meal", "dinner");
                 intent.putExtra("option", i.toString());
                 startActivity(intent);
             }

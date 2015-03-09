@@ -5,8 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 
@@ -18,25 +21,52 @@ public class activity_option_view extends ActionBarActivity {
         setContentView(R.layout.activity_activity_option_view);
 
         Intent intent = getIntent();
-        String currentOption = intent.getStringExtra("currentOption"); // what the current option is
+        String currentOption = intent.getStringExtra("currentOption");
+        setTitle(currentOption);  // what the current option is
+
         String index = intent.getStringExtra("index"); //
-        setTitle(currentOption); // 0 the first tag with the xml, 1 for the second, etc.
-        Toast.makeText(getBaseContext(), currentOption + ": " + index, Toast.LENGTH_LONG).show();
+        // 0 the first tag with the xml, 1 for the second, etc.
+
+        //Toast.makeText(getBaseContext(), currentOption + ": " + index, Toast.LENGTH_LONG).show();
 
         String meal = intent.getStringExtra("meal");
+
+        loadListView(index, meal);
+    }
+
+    public void loadListView(String index, String meal) {
+
+        ArrayList<String> array = new ArrayList<>();
+        ListView list;
+        ArrayAdapter<String> adapter;
+
+        Toast.makeText(getBaseContext(),"meal" + meal, Toast.LENGTH_LONG).show();
+
+
         switch (meal)
         {
             case "breakfast":
+                list = (ListView) findViewById(R.id.breakfastList);
+                Breakfast breakfast = new Breakfast();
+                array = breakfast.getArrayOfOptions(this, "entree", meal);
                 break;
             case "lunch":
+                list = (ListView) findViewById(R.id.lunchList);
+                Lunch lunch = new Lunch();
+                array = lunch.getArrayOfOptions(this, "entree", meal);
                 break;
             case "dinner":
+                list = (ListView) findViewById(R.id.dinnerList);
+                Dinner dinner = new Dinner();
+                array = dinner.getArrayOfOptions(this, "entree", meal);
                 break;
+            default: list = (ListView) findViewById(R.id.breakfastList);
         }
+
+        adapter = new ArrayAdapter<>(activity_option_view.this, android.R.layout.simple_list_item_1, array);
+
+        list.setAdapter(adapter); // crashing here
     }
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
