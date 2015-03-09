@@ -14,8 +14,7 @@ import android.widget.Toast;
 public class MainActivity extends ActionBarActivity {
 
     CalendarView cal;
-    /**
-     * ****************
+     /*****************
      * Number corresponds to building
      * 0 - Fort Worth
      * 1 - El Paso
@@ -26,8 +25,7 @@ public class MainActivity extends ActionBarActivity {
      * 6 - Carlsbad
      * 7 - Artesia
      * 8 - Lovington
-     * *****************
-     */
+     ******************/
     int buildingNumber = 0;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -37,6 +35,8 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         cal = (CalendarView) findViewById(R.id.calendarView);
+
+        setTitle("Fort Worth");
 
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
@@ -111,42 +111,43 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.fort_worth:
-                Toast.makeText(getApplicationContext(), "Fort Worth Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 0;
+                setTitle("Fort Worth");
                 return true;
             case R.id.el_paso:
-                Toast.makeText(getApplicationContext(), "El Paso Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 1;
+                setTitle("El Paso");
                 return true;
             case R.id.snyder:
-                Toast.makeText(getApplicationContext(), "Fort Worth Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 2;
+                setTitle("Snyder");
                 return true;
             case R.id.amarillo:
-                Toast.makeText(getApplicationContext(), "Amarillo Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 3;
+                setTitle("Amarillo");
                 return true;
             case R.id.hobbs:
-                Toast.makeText(getApplicationContext(), "Hobbs Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 4;
+                setTitle("Hobbs");
                 return true;
             case R.id.los_lunas:
-                Toast.makeText(getApplicationContext(), "Los Lunas Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 5;
+                setTitle("Los Lunas");
                 return true;
             case R.id.carlsbad:
-                Toast.makeText(getApplicationContext(), "Carlsbad Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 6;
+                setTitle("Carlsbad");
                 return true;
             case R.id.artesia:
-                Toast.makeText(getApplicationContext(), "Artesia Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 7;
+                setTitle("Artesia");
                 return true;
             case R.id.lovington:
-                Toast.makeText(getApplicationContext(), "Lovington Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 8;
+                setTitle("Lovington");
                 return true;
         }
+
         return super.onOptionsItemSelected(item);
     }
 }
