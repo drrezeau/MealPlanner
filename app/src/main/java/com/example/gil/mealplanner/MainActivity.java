@@ -11,6 +11,12 @@ import android.view.MenuItem;
 import android.widget.CalendarView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
 public class MainActivity extends ActionBarActivity {
 
     CalendarView cal;
@@ -28,15 +34,21 @@ public class MainActivity extends ActionBarActivity {
      ******************/
     int buildingNumber = 0;
 
+    public static MyFirebase me;
+
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Firebase.setAndroidContext(this);
+
 
         cal = (CalendarView) findViewById(R.id.calendarView);
 
         setTitle("Fort Worth");
+
+        me = Firebase();
 
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
@@ -93,6 +105,10 @@ public class MainActivity extends ActionBarActivity {
                     date = cal.getDate();
 
                     intent.putExtra("date", dayOfMonth + " " + sMonth + " " + year);
+                    intent.putExtra("month", sMonth);
+                    intent.putExtra("building", "Fort Worth");
+
+                    me.setBreakky();
                     startActivity(intent);
                 }
             }
@@ -150,4 +166,15 @@ public class MainActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public MyFirebase Firebase() {
+
+        MyFirebase me = new MyFirebase();
+
+        Firebase ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
+        me.Firebase(ref);
+
+        return me;
+    }
+
 }

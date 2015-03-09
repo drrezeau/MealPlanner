@@ -13,7 +13,10 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class dayView extends ActionBarActivity {
 
@@ -22,15 +25,15 @@ public class dayView extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_view);
 
-        Intent intent =  getIntent();
+        Intent intent = getIntent();
 
         //sets the title to the given date
-        String date= intent.getStringExtra("date");
+        String date = intent.getStringExtra("date");
         setTitle(date);
 
         /*************************************************************************
-        * Creates the 3 tabs
-        *************************************************************************/
+         * Creates the 3 tabs
+         *************************************************************************/
         TabHost tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();
 
@@ -46,12 +49,12 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab3);
 
         /*************************************************************************
-         * I will know what tab im on based on what listview's setonlciklistener is called
+         * I will know what tab im on based on what listview's setonclicklistener is called
          *************************************************************************/
-        ArrayList<String> array; // <-------- David. populate this array with the breakfast info online
+        ArrayList<String> array = MainActivity.me.myList; // <-------- David. populate this array with the breakfast info online
 
         Breakfast breakfast = new Breakfast();
-        array = breakfast.getArrayOfOptions(this, "entree", "breakfast");
+//        array = breakfast.getArrayOfOptions(this, "entree", "breakfast");
 
         ListView l = (ListView) findViewById(R.id.breakfastList);
         ArrayAdapter<String> adapter;
@@ -79,7 +82,7 @@ public class dayView extends ActionBarActivity {
 
 
         /*************************************************************************
-         * I will know what tab im on based on what listview's setonlciklistener is called
+         * I will know what tab im on based on what listview's setonclicklistener is called
          *************************************************************************/
         Lunch lunch = new Lunch();
         ArrayList<String> array1; // <-------- and this
@@ -169,6 +172,8 @@ public class dayView extends ActionBarActivity {
 
 
     public void test(View view) {
+    }
+}
        /* DinnerTest test = new DinnerTest();
 
         test.testEntree();
@@ -177,9 +182,18 @@ public class dayView extends ActionBarActivity {
 
         test.testMeal();
         test.testDisplay();*/
+
+ /*   public ArrayList<String> Firebase(String building, String meal, String month, String day, String year) {
+
+        MyFirebase me = new MyFirebase();
+
+        me.Firebase(building, meal, month, day, year);
+        System.out.println(me.entree + " " + me.fruit);
+
+        return me.setBreakky();
     }
 
-}
+}*/
 
 
 /*
