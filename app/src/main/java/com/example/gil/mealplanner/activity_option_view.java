@@ -40,29 +40,23 @@ public class activity_option_view extends ActionBarActivity {
         ListView list;
         ArrayAdapter<String> adapter;
 
-        Toast.makeText(getBaseContext(),"meal" + meal, Toast.LENGTH_LONG).show();
-
-
         switch (meal)
         {
             case "breakfast":
-                list = (ListView) findViewById(R.id.breakfastList);
                 Breakfast breakfast = new Breakfast();
                 array = breakfast.getArrayOfOptions(this, "entree", meal);
                 break;
             case "lunch":
-                list = (ListView) findViewById(R.id.lunchList);
                 Lunch lunch = new Lunch();
                 array = lunch.getArrayOfOptions(this, "entree", meal);
                 break;
             case "dinner":
-                list = (ListView) findViewById(R.id.dinnerList);
                 Dinner dinner = new Dinner();
                 array = dinner.getArrayOfOptions(this, "entree", meal);
                 break;
-            default: list = (ListView) findViewById(R.id.breakfastList);
         }
 
+        list = (ListView) findViewById(R.id.options);
         adapter = new ArrayAdapter<>(activity_option_view.this, android.R.layout.simple_list_item_1, array);
 
         list.setAdapter(adapter); // crashing here
