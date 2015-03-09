@@ -57,7 +57,7 @@ public class activity_option_view extends ActionBarActivity {
         }
 
         list = (ListView) findViewById(R.id.options);
-        adapter = new ArrayAdapter<>(activity_option_view.this, android.R.layout.simple_list_item_1, array);
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, array);
 
         list.setAdapter(adapter); // crashing here
     }
