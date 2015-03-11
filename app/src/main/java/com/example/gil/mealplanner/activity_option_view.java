@@ -5,8 +5,11 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -27,11 +30,10 @@ public class activity_option_view extends ActionBarActivity {
         String index = intent.getStringExtra("index"); //
         // 0 the first tag with the xml, 1 for the second, etc.
 
-        //Toast.makeText(getBaseContext(), currentOption + ": " + index, Toast.LENGTH_LONG).show();
-
         String meal = intent.getStringExtra("meal");
 
         loadListView(index, meal);
+
     }
 
     public void loadListView(String index, String meal) {
@@ -59,10 +61,28 @@ public class activity_option_view extends ActionBarActivity {
         list = (ListView) findViewById(R.id.options);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, array);
 
-        list.setAdapter(adapter); // crashing here
+        list.setAdapter(adapter);
+
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Toast.makeText(getBaseContext(), "Go Team", Toast.LENGTH_LONG).show();
+
+                /******************************
+                 *
+                 * Add fire base code to take whatever they clicked and change it online
+                 ******************************/
+                //dayView.adapter.notifyDataSetChanged();
+
+                //adapter.notifyDataSetChanged();
+                finish();
+            }
+
+        });
     }
 
-    @Override
+        @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_activity_option_view, menu);

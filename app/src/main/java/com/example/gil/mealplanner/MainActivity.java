@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
@@ -13,14 +14,11 @@ import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
-
 public class MainActivity extends ActionBarActivity {
 
     CalendarView cal;
-     /*****************
+    /**
+     * ****************
      * Number corresponds to building
      * 0 - Fort Worth
      * 1 - El Paso
@@ -31,24 +29,17 @@ public class MainActivity extends ActionBarActivity {
      * 6 - Carlsbad
      * 7 - Artesia
      * 8 - Lovington
-     ******************/
+     * *****************
+     */
     int buildingNumber = 0;
-
-    public static MyFirebase me;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Firebase.setAndroidContext(this);
-
 
         cal = (CalendarView) findViewById(R.id.calendarView);
-
-        setTitle("Fort Worth");
-
-        me = Firebase();
 
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
@@ -105,10 +96,6 @@ public class MainActivity extends ActionBarActivity {
                     date = cal.getDate();
 
                     intent.putExtra("date", dayOfMonth + " " + sMonth + " " + year);
-                    intent.putExtra("month", sMonth);
-                    intent.putExtra("building", "Fort Worth");
-
-                    me.setBreakky();
                     startActivity(intent);
                 }
             }
@@ -127,43 +114,42 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.fort_worth:
+                Toast.makeText(getApplicationContext(), "Fort Worth Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 0;
-                setTitle("Fort Worth");
                 return true;
             case R.id.el_paso:
+                Toast.makeText(getApplicationContext(), "El Paso Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 1;
-                setTitle("El Paso");
                 return true;
             case R.id.snyder:
+                Toast.makeText(getApplicationContext(), "Fort Worth Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 2;
-                setTitle("Snyder");
                 return true;
             case R.id.amarillo:
+                Toast.makeText(getApplicationContext(), "Amarillo Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 3;
-                setTitle("Amarillo");
                 return true;
             case R.id.hobbs:
+                Toast.makeText(getApplicationContext(), "Hobbs Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 4;
-                setTitle("Hobbs");
                 return true;
             case R.id.los_lunas:
+                Toast.makeText(getApplicationContext(), "Los Lunas Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 5;
-                setTitle("Los Lunas");
                 return true;
             case R.id.carlsbad:
+                Toast.makeText(getApplicationContext(), "Carlsbad Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 6;
-                setTitle("Carlsbad");
                 return true;
             case R.id.artesia:
+                Toast.makeText(getApplicationContext(), "Artesia Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 7;
-                setTitle("Artesia");
                 return true;
             case R.id.lovington:
+                Toast.makeText(getApplicationContext(), "Lovington Selected", Toast.LENGTH_SHORT).show();
                 buildingNumber = 8;
-                setTitle("Lovington");
                 return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
@@ -176,5 +162,4 @@ public class MainActivity extends ActionBarActivity {
 
         return me;
     }
-
 }
