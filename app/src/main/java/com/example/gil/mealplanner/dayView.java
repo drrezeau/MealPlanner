@@ -1,5 +1,6 @@
 package com.example.gil.mealplanner;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
@@ -31,6 +32,10 @@ public class dayView extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_view);
+
+        ActionBar supportActionBar = getSupportActionBar();
+        //supportActionBar.setLogo(R.drawable.logo);
+        supportActionBar.setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
 

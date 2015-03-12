@@ -267,7 +267,7 @@ public class MainActivity extends ActionBarActivity {
             buildingNumber = Integer.parseInt(line);
             InputRead.close();
         }  catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "Whale.. That didn't work", Toast.LENGTH_SHORT).show();
+            buildingNumber = 0;
         }
 
     }
