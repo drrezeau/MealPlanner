@@ -17,9 +17,15 @@ import android.widget.Toast;
 import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class dayView extends ActionBarActivity {
+
+    String month;
+    String building;
+    String day;
+    String  year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +37,13 @@ public class dayView extends ActionBarActivity {
         //sets the title to the given date
         String date = intent.getStringExtra("date");
         setTitle(date);
+
+        month = intent.getStringExtra("month");
+        building = intent.getStringExtra("building");
+        day = intent.getStringExtra("day");
+        year = intent.getStringExtra("year");
+
+        System.out.println(month + ' ' + building + ' ' + day);
 
         /*************************************************************************
          * Creates the 3 tabs
@@ -49,7 +62,9 @@ public class dayView extends ActionBarActivity {
         tabHost.addTab(tab2);
         tabHost.addTab(tab3);
 
+
         new createListView().execute();
+
     }
 
     @Override
@@ -74,7 +89,6 @@ public class dayView extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
     class createListView extends AsyncTask<String, String, String> {
 
         public ArrayAdapter<String> adapter;
@@ -89,9 +103,12 @@ public class dayView extends ActionBarActivity {
 
         @Override
         protected void onPreExecute() {
+
+//            array = MainActivity.me.myList;
+
             Breakfast breakfast = new Breakfast();
             array = breakfast.getArrayOfOptions(dayView.this, "entree", "breakfast");
-
+//
             l = (ListView) findViewById(R.id.breakfastList);
 
             adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
@@ -148,13 +165,13 @@ public class dayView extends ActionBarActivity {
             ///////////////////////////////////////////////////////////////////////////////////////
 
             Dinner dinner = new Dinner();
-            array2 = dinner.getArrayOfOptions(dayView.this, "dessert", "dinner");
+//            array2 = dinner.getArrayOfOptions(dayView.this, "dessert", "dinner");
 
             l2 = (ListView) findViewById(R.id.dinnerList);
 
-            adapter2 = new ArrayAdapter<>(dayView.this,
-                    android.R.layout.simple_list_item_1, array2);
-            l2.setAdapter(adapter2);
+//            adapter2 = new ArrayAdapter<>(dayView.this,
+//                    android.R.layout.simple_list_item_1, array2);
+//            l2.setAdapter(adapter2);
 
             //onClickListener of the third tab
             l2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -177,6 +194,39 @@ public class dayView extends ActionBarActivity {
 
         @Override
         protected String doInBackground(String... params) {
+            HashMap<String, ArrayList> Year = MainActivity.Building.get(year);
+            ArrayList<HashMap> list = Year.get(month);
+
+            HashMap<String, HashMap> Month = new HashMap<>();
+
+            for (Integer i = 1; i < list.size(); i++) {
+                Month.put(i.toString(), list.get(i));
+//                    MainActivity.myMonth.put(i.toString(), list.get(i));
+            }
+
+            HashMap dayMap = Month.get(day);
+            HashMap<String, String> meal = (HashMap) dayMap.get("Dinner");
+            Dinner myMeal = new Dinner();
+
+            String type = meal.get("Entree");
+            System.out.println(type);
+            myMeal.setEntree(type);
+
+            type = meal.get("Soup");
+            myMeal.setSide1(type);
+
+            type = meal.get("Garnish");
+            myMeal.setVeg(type);
+
+            type = meal.get("Dessert");
+            myMeal.setDessert(type);
+
+//            System.out.println(type);
+            array2 = myMeal.returnMeal();
+
+            adapter2 = new ArrayAdapter<>(dayView.this,
+                    android.R.layout.simple_list_item_1, array2);
+            l2.setAdapter(adapter2);
             return null;
         }
 
@@ -184,7 +234,10 @@ public class dayView extends ActionBarActivity {
 
         }
     }
-}
+
+
+    public void test(View view) {
+
        /* DinnerTest test = new DinnerTest();
 
         test.testEntree();
@@ -193,18 +246,9 @@ public class dayView extends ActionBarActivity {
 
         test.testMeal();
         test.testDisplay();*/
-
- /*   public ArrayList<String> Firebase(String building, String meal, String month, String day, String year) {
-
-        MyFirebase me = new MyFirebase();
-
-        me.Firebase(building, meal, month, day, year);
-        System.out.println(me.entree + " " + me.fruit);
-
-        return me.setBreakky();
     }
+}
 
-}*/
 
 
 /*

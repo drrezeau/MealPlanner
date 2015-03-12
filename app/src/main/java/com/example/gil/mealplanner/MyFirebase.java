@@ -23,7 +23,7 @@ public class MyFirebase {
     public void Firebase(Firebase ref) {
 
         Firebase ref1 = ref.child("Fort Worth").child("2015").child("March").child("10").child("Breakfast").child("Entree");
-        ref1.addValueEventListener(new ValueEventListener() {
+        ref1.addListenerForSingleValueEvent(new ValueEventListener() {
             String values;
 
             @Override
@@ -118,21 +118,22 @@ public class MyFirebase {
     }
 
 
-    public void setBreakky() {
+    public ArrayList<String> setBreakky() {
 
+        System.out.println(entree);
+        System.out.println(side1);
+        System.out.println(side2);
+        System.out.println(cereal);
+        System.out.println(fruit);
         myList.clear();
         myList.add(entree);
         myList.add(side1);
         myList.add(side2);
         myList.add(cereal);
         myList.add(fruit);
-//        System.out.println(entree);
-//        System.out.println(side1);
-//        System.out.println(side2);
-//        System.out.println(cereal);
-//        System.out.println(fruit);
 
 
+        return myList;
 
     }
 }
