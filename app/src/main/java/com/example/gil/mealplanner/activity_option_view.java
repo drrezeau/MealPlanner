@@ -66,16 +66,22 @@ public class activity_option_view extends ActionBarActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                /*
+                ArrayList<String> array;
 
-                Toast.makeText(getBaseContext(), "Go Team", Toast.LENGTH_LONG).show();
+                ListView l = (ListView) findViewById(R.id.breakfastList); // not always breakfast
+                Breakfast breakfast = new Breakfast();
+                array = breakfast.getArrayOfOptions(activity_option_view.this, "entree", "breakfast");
 
-                /******************************
-                 *
-                 * Add fire base code to take whatever they clicked and change it online
-                 ******************************/
-                //dayView.adapter.notifyDataSetChanged();
 
-                //adapter.notifyDataSetChanged();
+                String value = (String)adapter.getItemAtPosition(position);
+
+                array[index] = value;
+
+
+                adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
+                l.setAdapter(adapter);
+*/
                 finish();
             }
 

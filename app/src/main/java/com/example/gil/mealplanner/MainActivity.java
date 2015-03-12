@@ -17,6 +17,12 @@ import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -25,7 +31,8 @@ import java.util.HashMap;
 public class MainActivity extends ActionBarActivity {
 
     CalendarView cal;
-     /*****************
+    /**
+     * ****************
      * Number corresponds to building
      * 0 - Fort Worth
      * 1 - El Paso
@@ -36,7 +43,8 @@ public class MainActivity extends ActionBarActivity {
      * 6 - Carlsbad
      * 7 - Artesia
      * 8 - Lovington
-     ******************/
+     * *****************
+     */
     int buildingNumber = 0;
 
     Firebase ref;
@@ -49,6 +57,8 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Firebase.setAndroidContext(this);
+
+        setBuildingNumber();
 
         ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
         ref1 = ref.child("Fort Worth");
@@ -160,52 +170,106 @@ public class MainActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.fort_worth:
                 buildingNumber = 0;
+                writeFile();
                 setTitle("Fort Worth");
+                setBuildingNumber();
                 ref1 = ref.child("Fort Worth");
                 return true;
             case R.id.el_paso:
                 buildingNumber = 1;
+                writeFile();
                 setTitle("El Paso");
+                setBuildingNumber();
                 ref1 = ref.child("El Paso");
                 return true;
             case R.id.snyder:
                 buildingNumber = 2;
+                writeFile();
                 setTitle("Snyder");
+                setBuildingNumber();
                 ref1 = ref.child("Snyder");
                 return true;
             case R.id.amarillo:
                 buildingNumber = 3;
+                writeFile();
                 setTitle("Amarillo");
+                setBuildingNumber();
                 ref1 = ref.child("Amarillo");
                 return true;
             case R.id.hobbs:
                 buildingNumber = 4;
+                writeFile();
                 setTitle("Hobbs");
+                setBuildingNumber();
                 ref1 = ref.child("Hobbs");
                 return true;
             case R.id.los_lunas:
                 buildingNumber = 5;
+                writeFile();
                 setTitle("Los Lunas");
+                setBuildingNumber();
                 ref1 = ref.child("Los Lunas");
                 return true;
             case R.id.carlsbad:
                 buildingNumber = 6;
+                writeFile();
                 setTitle("Carlsbad");
                 ref1 = ref.child("Carlsbad");
                 return true;
             case R.id.artesia:
                 buildingNumber = 7;
+                writeFile();
                 setTitle("Artesia");
+                setBuildingNumber();
                 ref1 = ref.child("Artesia");
                 return true;
             case R.id.lovington:
                 buildingNumber = 8;
+                writeFile();
                 setTitle("Lovington");
+                setBuildingNumber();
                 ref1 = ref.child("Lovington");
                 return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void writeFile() {
+        String filename = "buildingNum.txt";
+        FileOutputStream outputStream;
+
+        try {
+        outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+        String num = Integer.toString(buildingNumber);
+        outputStream.write(num.getBytes());
+        outputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        Toast.makeText(getApplicationContext(), "File Written", Toast.LENGTH_SHORT).show();
+    }
+
+    public void setBuildingNumber() {
+
+        try {
+            FileInputStream inputStream = openFileInput("buildingNum.txt");
+            InputStreamReader InputRead = new InputStreamReader(inputStream);
+            BufferedReader bufferedReader = new BufferedReader(InputRead);
+
+            String line =  bufferedReader.readLine();
+
+            Toast.makeText(getApplicationContext(), "Building" + line, Toast.LENGTH_SHORT).show();
+
+            buildingNumber = Integer.parseInt(line);
+            InputRead.close();
+        }  catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "Whale.. That didn't work", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public MyFirebase Firebase() {

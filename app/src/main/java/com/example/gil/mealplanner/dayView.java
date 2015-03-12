@@ -25,7 +25,7 @@ public class dayView extends ActionBarActivity {
     String month;
     String building;
     String day;
-    String  year;
+    String year;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +88,7 @@ public class dayView extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
 
     class createListView extends AsyncTask<String, String, String> {
 
@@ -227,6 +228,7 @@ public class dayView extends ActionBarActivity {
             adapter2 = new ArrayAdapter<>(dayView.this,
                     android.R.layout.simple_list_item_1, array2);
             l2.setAdapter(adapter2);
+
             return null;
         }
 
@@ -234,9 +236,10 @@ public class dayView extends ActionBarActivity {
 
         }
     }
+}
 
 
-    public void test(View view) {
+    //public void test(View view) {
 
        /* DinnerTest test = new DinnerTest();
 
@@ -246,6 +249,15 @@ public class dayView extends ActionBarActivity {
 
         test.testMeal();
         test.testDisplay();*/
+
+ /*   public ArrayList<String> Firebase(String building, String meal, String month, String day, String year) {
+
+        MyFirebase me = new MyFirebase();
+
+        me.Firebase(building, meal, month, day, year);
+        System.out.println(me.entree + " " + me.fruit);
+
+        return me.setBreakky();
     }
 }
 
