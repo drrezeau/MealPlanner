@@ -11,7 +11,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
-import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -243,8 +242,6 @@ public class MainActivity extends ActionBarActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        Toast.makeText(getApplicationContext(), "File Written", Toast.LENGTH_SHORT).show();
     }
 
     public void setBuildingNumber() {
@@ -255,8 +252,6 @@ public class MainActivity extends ActionBarActivity {
             BufferedReader bufferedReader = new BufferedReader(InputRead);
 
             String line =  bufferedReader.readLine();
-
-            Toast.makeText(getApplicationContext(), "Building" + line, Toast.LENGTH_SHORT).show();
 
             buildingNumber = Integer.parseInt(line);
             InputRead.close();
