@@ -39,7 +39,6 @@ public class dayView extends ActionBarActivity {
         setContentView(R.layout.activity_day_view);
 
         android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
-        //supportActionBar.setLogo(R.drawable.logo);
         supportActionBar.setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();

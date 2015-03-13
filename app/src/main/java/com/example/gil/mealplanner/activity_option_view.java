@@ -23,6 +23,9 @@ public class activity_option_view extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_option_view);
 
+        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
+        supportActionBar.setDisplayHomeAsUpEnabled(true);
+
         Intent intent = getIntent();
         String currentOption = intent.getStringExtra("currentOption");
         setTitle(currentOption);  // what the current option is
@@ -89,7 +92,8 @@ public class activity_option_view extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == android.R.id.home) {
+            finish();
             return true;
         }
 
