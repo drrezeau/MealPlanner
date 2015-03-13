@@ -1,8 +1,11 @@
 package com.example.gil.mealplanner;
 
 //import android.app.ActionBar;
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,6 +32,7 @@ public class dayView extends ActionBarActivity {
     String day;
     String year;
 
+    @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,7 +92,7 @@ public class dayView extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.home) {
+        if (id == android.R.id.home) {
             finish();
             return true;
         }

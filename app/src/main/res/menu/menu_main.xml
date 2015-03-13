@@ -6,6 +6,7 @@
 
     <item
         android:icon="@drawable/building"
+        android:id="@+id/building"
         android:title="@string/buildings"
         app:showAsAction="ifRoom"
         >

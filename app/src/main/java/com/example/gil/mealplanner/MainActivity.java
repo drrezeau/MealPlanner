@@ -177,69 +177,58 @@ public class MainActivity extends ActionBarActivity {
         switch (item.getItemId()) {
             case R.id.fort_worth:
                 buildingNumber = 0;
-                writeFile();
                 setTitle("Fort Worth");
-                setBuildingNumber();
                 ref1 = ref.child("Fort Worth");
-                return true;
+                break;
             case R.id.el_paso:
                 buildingNumber = 1;
-                writeFile();
                 setTitle("El Paso");
-                setBuildingNumber();
                 ref1 = ref.child("El Paso");
-                return true;
+                break;
             case R.id.snyder:
                 buildingNumber = 2;
-                writeFile();
                 setTitle("Snyder");
-                setBuildingNumber();
                 ref1 = ref.child("Snyder");
-                return true;
+                break;
             case R.id.amarillo:
                 buildingNumber = 3;
-                writeFile();
                 setTitle("Amarillo");
-                setBuildingNumber();
                 ref1 = ref.child("Amarillo");
-                return true;
+                break;
             case R.id.hobbs:
                 buildingNumber = 4;
-                writeFile();
                 setTitle("Hobbs");
-                setBuildingNumber();
                 ref1 = ref.child("Hobbs");
-                return true;
+                break;
             case R.id.los_lunas:
                 buildingNumber = 5;
-                writeFile();
                 setTitle("Los Lunas");
-                setBuildingNumber();
                 ref1 = ref.child("Los Lunas");
-                return true;
+                break;
             case R.id.carlsbad:
                 buildingNumber = 6;
-                writeFile();
                 setTitle("Carlsbad");
                 ref1 = ref.child("Carlsbad");
-                return true;
+                break;
             case R.id.artesia:
                 buildingNumber = 7;
-                writeFile();
                 setTitle("Artesia");
-                setBuildingNumber();
                 ref1 = ref.child("Artesia");
-                return true;
+                break;
             case R.id.lovington:
                 buildingNumber = 8;
-                writeFile();
                 setTitle("Lovington");
-                setBuildingNumber();
                 ref1 = ref.child("Lovington");
-                return true;
+                break;
         }
 
-        return super.onOptionsItemSelected(item);
+        if (item.getItemId() != R.id.building) {
+            writeFile();
+            setBuildingNumber();
+            newFirebase();
+        }
+
+        return true;
     }
 
     public void writeFile() {
