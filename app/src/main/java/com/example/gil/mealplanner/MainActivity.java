@@ -3,10 +3,11 @@ package com.example.gil.mealplanner;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
+//import android.os.AsyncTask;
 import android.os.Build;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.CalendarView;
@@ -19,13 +20,13 @@ import com.firebase.client.ValueEventListener;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.HashMap;
 
 public class MainActivity extends ActionBarActivity {
@@ -60,6 +61,7 @@ public class MainActivity extends ActionBarActivity {
 
         setBuildingNumber();
 
+
         ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
         ref1 = ref.child("Fort Worth");
 
@@ -76,13 +78,18 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
+                Calendar myDate =  Calendar.getInstance();
+                Date x = myDate.getTime();
+                DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+                Log.i("Today's Date", format.format(x.getTime()));
+
                 if (cal.getDate() != date) {
 
                     Context context = cal.getContext();
 
                     Intent intent = new Intent();
                     intent.setClass(context, dayView.class);
-                    String sMonth = new String();
+                    String sMonth = "";
                     switch (month) {
                         case 0:
                             sMonth = "January";
@@ -244,8 +251,6 @@ public class MainActivity extends ActionBarActivity {
         String num = Integer.toString(buildingNumber);
         outputStream.write(num.getBytes());
         outputStream.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -272,7 +277,7 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-    public MyFirebase Firebase() {
+/*    public MyFirebase Firebase() {
 
         MyFirebase me = new MyFirebase();
 
@@ -280,6 +285,6 @@ public class MainActivity extends ActionBarActivity {
         me.Firebase(ref);
 
         return me;
-    }
+    }*/
 
 }

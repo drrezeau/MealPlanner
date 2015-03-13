@@ -1,10 +1,11 @@
 package com.example.gil.mealplanner;
 
-import android.app.ActionBar;
+//import android.app.ActionBar;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,11 +16,11 @@ import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
+//import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
+//import java.util.List;
 
 public class dayView extends ActionBarActivity {
 
@@ -48,7 +49,7 @@ public class dayView extends ActionBarActivity {
         day = intent.getStringExtra("day");
         year = intent.getStringExtra("year");
 
-        System.out.println(month + ' ' + building + ' ' + day);
+        Log.i("Passed information", month + ' ' + year + ' ' + day + ' ' +  building);
 
         /*************************************************************************
          * Creates the 3 tabs
@@ -100,22 +101,16 @@ public class dayView extends ActionBarActivity {
 
         public ArrayAdapter<String> adapter;
         public ArrayAdapter<String> adapter1;
-        public ArrayAdapter<String> adapter2;
+        public ArrayAdapter adapter2;
         public ListView l;
         public ListView l1;
         public ListView l2;
         public ArrayList<String> array;
         public ArrayList<String> array1;
-        public ArrayList<String> array2;
+        public ArrayList array2;
 
         @Override
         protected void onPreExecute() {
-
-//            array = MainActivity.me.myList;
-
-            Breakfast breakfast = new Breakfast();
-//            array = breakfast.getArrayOfOptions(dayView.this, "entree", "breakfast");
-//
             l = (ListView) findViewById(R.id.breakfastList);
 
 //            adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
@@ -131,7 +126,7 @@ public class dayView extends ActionBarActivity {
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
-                    String item = ((TextView) view).getText().toString(); //
+//                    String item = ((TextView) view).getText().toString(); //
 
                     intent.putExtra("meal", "breakfast");
                     intent.putExtra("option", i.toString());
@@ -141,8 +136,6 @@ public class dayView extends ActionBarActivity {
 
             ///////////////////////////////////////////////////////////////////////////////////////
 
-            Lunch lunch = new Lunch();
-//            array1 = lunch.getArrayOfOptions(dayView.this, "salad", "lunch");
 
             l1 = (ListView) findViewById(R.id.lunchList);
 
@@ -170,10 +163,6 @@ public class dayView extends ActionBarActivity {
             });
 
             ///////////////////////////////////////////////////////////////////////////////////////
-
-            Dinner dinner = new Dinner();
-//            array2 = dinner.getArrayOfOptions(dayView.this, "dessert", "dinner");
-
             l2 = (ListView) findViewById(R.id.dinnerList);
 
 //            adapter2 = new ArrayAdapter<>(dayView.this,
@@ -190,7 +179,7 @@ public class dayView extends ActionBarActivity {
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
-                    String item = ((TextView) view).getText().toString(); //
+//                    String item = ((TextView) view).getText().toString(); //
 
                     intent.putExtra("meal", "dinner");
                     intent.putExtra("option", i.toString());
@@ -238,11 +227,11 @@ public class dayView extends ActionBarActivity {
 
         }
 
-        public ArrayList<String> setBreakfastList(HashMap<String, String> meal) {
+        public ArrayList setBreakfastList(HashMap<String, String> meal) {
             Breakfast myMeal = new Breakfast();
 
             String type = meal.get("Entree");
-            System.out.println(type);
+//            System.out.println(type);
             myMeal.setEntree(type);
 
             type = meal.get("Side1");
@@ -260,11 +249,11 @@ public class dayView extends ActionBarActivity {
             return myMeal.returnMeal();
         }
 
-        public ArrayList<String> setLunchList(HashMap<String, String> meal) {
+        public ArrayList setLunchList(HashMap<String, String> meal) {
             Lunch myMeal = new Lunch();
 
             String type = meal.get("Entree");
-            System.out.println(type);
+//            System.out.println(type);
             myMeal.setEntree(type);
 
             type = meal.get("Side1");
@@ -281,11 +270,11 @@ public class dayView extends ActionBarActivity {
 
             return myMeal.returnMeal();
         }
-        public ArrayList<String> setDinnerList(HashMap<String, String> meal) {
+        public ArrayList setDinnerList(HashMap<String, String> meal) {
             Dinner myMeal = new Dinner();
 
             String type = meal.get("Entree");
-            System.out.println(type);
+//            System.out.println(type);
             myMeal.setEntree(type);
 
             type = meal.get("Soup");

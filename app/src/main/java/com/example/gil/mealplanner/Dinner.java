@@ -51,7 +51,7 @@ public class Dinner extends Meal{
         this.dessert = dessert;
     }
 
-    public void setMeal(String entree, String side1, String side2, String veg, String dessert) {
+    public void setMeal(String entree, String side1, String veg, String dessert) {
         setEntree(entree);
         setSide1(side1);
         setVeg(veg);
