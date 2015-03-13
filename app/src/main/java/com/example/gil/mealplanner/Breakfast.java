@@ -70,4 +70,14 @@ public class Breakfast extends Meal {
         setFruit(fruit);
     }
 
+    public ArrayList returnMeal() {
+        ArrayList<String> meal = new ArrayList<>();
+        meal.add(entree);
+        meal.add(side1);
+        meal.add(side2);
+        meal.add(fruit);
+        meal.add(cereal);
+        return meal;
+    }
+
 }

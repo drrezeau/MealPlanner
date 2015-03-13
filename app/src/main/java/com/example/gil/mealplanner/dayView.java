@@ -33,7 +33,7 @@ public class dayView extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_day_view);
 
-        ActionBar supportActionBar = getSupportActionBar();
+        android.support.v7.app.ActionBar supportActionBar = getSupportActionBar();
         //supportActionBar.setLogo(R.drawable.logo);
         supportActionBar.setDisplayHomeAsUpEnabled(true);
 
@@ -87,7 +87,8 @@ public class dayView extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.home) {
+            finish();
             return true;
         }
 
@@ -113,12 +114,12 @@ public class dayView extends ActionBarActivity {
 //            array = MainActivity.me.myList;
 
             Breakfast breakfast = new Breakfast();
-            array = breakfast.getArrayOfOptions(dayView.this, "entree", "breakfast");
+//            array = breakfast.getArrayOfOptions(dayView.this, "entree", "breakfast");
 //
             l = (ListView) findViewById(R.id.breakfastList);
 
-            adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
-            l.setAdapter(adapter);
+//            adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
+//            l.setAdapter(adapter);
 
             //onClickListener of the first tab
             l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -141,13 +142,13 @@ public class dayView extends ActionBarActivity {
             ///////////////////////////////////////////////////////////////////////////////////////
 
             Lunch lunch = new Lunch();
-            array1 = lunch.getArrayOfOptions(dayView.this, "salad", "lunch");
+//            array1 = lunch.getArrayOfOptions(dayView.this, "salad", "lunch");
 
             l1 = (ListView) findViewById(R.id.lunchList);
 
-            adapter1 = new ArrayAdapter<>(dayView.this,
-                    android.R.layout.simple_list_item_1, array1);
-            l1.setAdapter(adapter1);
+//            adapter1 = new ArrayAdapter<>(dayView.this,
+//                    android.R.layout.simple_list_item_1, array1);
+//            l1.setAdapter(adapter1);
 
             //onClickListener of the second tab
             l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -211,7 +212,76 @@ public class dayView extends ActionBarActivity {
             }
 
             HashMap dayMap = Month.get(day);
-            HashMap<String, String> meal = (HashMap) dayMap.get("Dinner");
+
+            HashMap<String, String> meal = (HashMap) dayMap.get("Breakfast");
+            array = setBreakfastList(meal);
+            meal = (HashMap) dayMap.get("Lunch");
+            array1 = setLunchList(meal);
+            meal = (HashMap) dayMap.get("Dinner");
+            array2 = setDinnerList(meal);
+
+            adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
+            l.setAdapter(adapter);
+
+            adapter1 = new ArrayAdapter<>(dayView.this,
+                    android.R.layout.simple_list_item_1, array1);
+            l1.setAdapter(adapter1);
+
+            adapter2 = new ArrayAdapter<>(dayView.this,
+                    android.R.layout.simple_list_item_1, array2);
+            l2.setAdapter(adapter2);
+
+            return null;
+        }
+
+        protected void onPostExecute(String result) {
+
+        }
+
+        public ArrayList<String> setBreakfastList(HashMap<String, String> meal) {
+            Breakfast myMeal = new Breakfast();
+
+            String type = meal.get("Entree");
+            System.out.println(type);
+            myMeal.setEntree(type);
+
+            type = meal.get("Side1");
+            myMeal.setSide1(type);
+
+            type = meal.get("Side2");
+            myMeal.setSide2(type);
+
+            type = meal.get("Cereal");
+            myMeal.setCereal(type);
+
+            type = meal.get("Fruit");
+            myMeal.setFruit(type);
+
+            return myMeal.returnMeal();
+        }
+
+        public ArrayList<String> setLunchList(HashMap<String, String> meal) {
+            Lunch myMeal = new Lunch();
+
+            String type = meal.get("Entree");
+            System.out.println(type);
+            myMeal.setEntree(type);
+
+            type = meal.get("Side1");
+            myMeal.setSalad(type);
+
+            type = meal.get("Side2");
+            myMeal.setStarch(type);
+
+            type = meal.get("Veggetable");
+            myMeal.setVeg(type);
+
+            type = meal.get("Dessert");
+            myMeal.setDessert(type);
+
+            return myMeal.returnMeal();
+        }
+        public ArrayList<String> setDinnerList(HashMap<String, String> meal) {
             Dinner myMeal = new Dinner();
 
             String type = meal.get("Entree");
@@ -227,20 +297,10 @@ public class dayView extends ActionBarActivity {
             type = meal.get("Dessert");
             myMeal.setDessert(type);
 
-//            System.out.println(type);
-            array2 = myMeal.returnMeal();
-
-            adapter2 = new ArrayAdapter<>(dayView.this,
-                    android.R.layout.simple_list_item_1, array2);
-            l2.setAdapter(adapter2);
-
-            return null;
-        }
-
-        protected void onPostExecute(String result) {
-
+            return myMeal.returnMeal();
         }
     }
+
 }
 
 

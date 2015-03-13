@@ -1,5 +1,7 @@
 package com.example.gil.mealplanner;
 
+import java.util.ArrayList;
+
 public class Lunch extends Meal{
     private String entree;
     private String salad;
@@ -55,6 +57,16 @@ public class Lunch extends Meal{
         setStarch(starch);
         setVeg(veg);
         setDessert(dessert);
+    }
+
+    public ArrayList returnMeal() {
+        ArrayList<String> meal = new ArrayList<>();
+        meal.add(entree);
+        meal.add(salad);
+        meal.add(starch);
+        meal.add(veg);
+        meal.add(dessert);
+        return meal;
     }
 
 }
