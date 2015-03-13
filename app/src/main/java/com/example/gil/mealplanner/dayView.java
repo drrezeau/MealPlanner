@@ -118,14 +118,14 @@ public class dayView extends ActionBarActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    Toast.makeText(getBaseContext(), String.valueOf(id), Toast.LENGTH_LONG).show();
-
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
-//                    String item = ((TextView) view).getText().toString(); //
+                    String item = ((TextView) view).getText().toString();
 
+                    intent.putExtra("currentOption", item);
                     intent.putExtra("meal", "breakfast");
+                    intent.putExtra("index", i.toString());
                     intent.putExtra("option", i.toString());
                     startActivity(intent);
                 }
@@ -139,12 +139,10 @@ public class dayView extends ActionBarActivity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                    Toast.makeText(getBaseContext(), String.valueOf(id), Toast.LENGTH_LONG).show();
-
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
-                    String item = ((TextView) view).getText().toString(); //
+                    String item = ((TextView) view).getText().toString();
 
                     intent.putExtra("currentOption", item);
                     intent.putExtra("index", i.toString());
@@ -153,22 +151,22 @@ public class dayView extends ActionBarActivity {
                 }
             });
 
-            ///////////////////////////////////////////////////////////////////////////////////////
-            l2 = (ListView) findViewById(R.id.dinnerList);
+                    ///////////////////////////////////////////////////////////////////////////////////////
+                    l2 = (ListView) findViewById(R.id.dinnerList);
 
-            //onClickListener of the third tab
-            l2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                @Override
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                    Toast.makeText(getBaseContext(), String.valueOf(id), Toast.LENGTH_LONG).show();
+                    //onClickListener of the third tab
+                    l2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
-//                    String item = ((TextView) view).getText().toString(); //
+                String item = ((TextView) view).getText().toString();
 
+                    intent.putExtra("currentOption", item);
                     intent.putExtra("meal", "dinner");
+                    intent.putExtra("index", i.toString());
                     intent.putExtra("option", i.toString());
                     startActivity(intent);
                 }
@@ -218,7 +216,6 @@ public class dayView extends ActionBarActivity {
             Breakfast myMeal = new Breakfast();
 
             String type = meal.get("Entree");
-//            System.out.println(type);
             myMeal.setEntree(type);
 
             type = meal.get("Side1");
@@ -240,7 +237,6 @@ public class dayView extends ActionBarActivity {
             Lunch myMeal = new Lunch();
 
             String type = meal.get("Entree");
-//            System.out.println(type);
             myMeal.setEntree(type);
 
             type = meal.get("Side1");

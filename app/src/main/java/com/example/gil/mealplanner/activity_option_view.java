@@ -36,25 +36,26 @@ public class activity_option_view extends ActionBarActivity {
 
     }
 
-    public void loadListView(String index, String meal) {
+    public void loadListView(String index1, String meal) {
 
         ArrayList<String> array = new ArrayList<>();
         ListView list;
         ArrayAdapter<String> adapter;
+        int index = Integer.parseInt(index1);
 
         switch (meal)
         {
             case "breakfast":
                 Breakfast breakfast = new Breakfast();
-                array = breakfast.getArrayOfOptions(this, "entree", meal);
+                array = breakfast.getArrayOfOptions(this, index, meal);
                 break;
             case "lunch":
                 Lunch lunch = new Lunch();
-                array = lunch.getArrayOfOptions(this, "entree", meal);
+                array = lunch.getArrayOfOptions(this, index, meal);
                 break;
             case "dinner":
                 Dinner dinner = new Dinner();
-                array = dinner.getArrayOfOptions(this, "entree", meal);
+                array = dinner.getArrayOfOptions(this, index, meal);
                 break;
         }
 
@@ -66,22 +67,7 @@ public class activity_option_view extends ActionBarActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                /*
-                ArrayList<String> array;
 
-                ListView l = (ListView) findViewById(R.id.breakfastList); // not always breakfast
-                Breakfast breakfast = new Breakfast();
-                array = breakfast.getArrayOfOptions(activity_option_view.this, "entree", "breakfast");
-
-
-                String value = (String)adapter.getItemAtPosition(position);
-
-                array[index] = value;
-
-
-                adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
-                l.setAdapter(adapter);
-*/
                 finish();
             }
 
