@@ -45,6 +45,7 @@ public class MainActivity extends ActionBarActivity {
      * 8 - Lovington
      * *****************
      */
+
     int buildingNumber = 0;
 
     Firebase ref;
@@ -61,6 +62,7 @@ public class MainActivity extends ActionBarActivity {
         setBuildingNumber();
 
 
+
         ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
         ref1 = ref.child("Fort Worth");
 
@@ -69,8 +71,7 @@ public class MainActivity extends ActionBarActivity {
 
         setTitle("Fort Worth");
 
-        newFirebase();
-
+        setFirebaseOnLoad();
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
 
@@ -146,8 +147,7 @@ public class MainActivity extends ActionBarActivity {
 
     private void newFirebase() {
 
-//        Firebase ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
-        Firebase ref1 = ref.child("Fort Worth");//.child("2016").child("January");
+        Firebase ref1 = ref.child("Fort Worth");
 
         ref1.addValueEventListener(new ValueEventListener() {
 
@@ -259,6 +259,39 @@ public class MainActivity extends ActionBarActivity {
             buildingNumber = 0;
         }
 
+    }
+
+    private void setFirebaseOnLoad() {
+        switch (buildingNumber) {
+            case 0:
+                ref1 = ref.child("Fort Worth");
+                break;
+            case 1:
+                ref1 = ref.child("El Paso");
+                break;
+            case 2:
+                ref1 = ref.child("Snyder");
+                break;
+            case 3:
+                ref1 = ref.child("Amarillo");
+                break;
+            case 4:
+                ref1 = ref.child("Hobbs");
+                break;
+            case 5:
+                ref1 = ref.child("Los Lunas");
+                break;
+            case 6:
+                ref1 = ref.child("Carlsbad");
+                break;
+            case 7:
+                ref1 = ref.child("Artesia");
+                break;
+            case 8:
+                ref1 = ref.child("Lovington");
+                break;
+        }
+        newFirebase();
     }
 
 }
