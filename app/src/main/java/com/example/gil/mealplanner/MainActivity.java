@@ -277,14 +277,4 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
-/*    public MyFirebase Firebase() {
-
-        MyFirebase me = new MyFirebase();
-
-        Firebase ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
-        me.Firebase(ref);
-
-        return me;
-    }*/
-
 }

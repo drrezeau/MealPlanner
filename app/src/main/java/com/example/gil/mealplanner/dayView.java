@@ -113,9 +113,6 @@ public class dayView extends ActionBarActivity {
         protected void onPreExecute() {
             l = (ListView) findViewById(R.id.breakfastList);
 
-//            adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
-//            l.setAdapter(adapter);
-
             //onClickListener of the first tab
             l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
@@ -135,13 +132,7 @@ public class dayView extends ActionBarActivity {
             });
 
             ///////////////////////////////////////////////////////////////////////////////////////
-
-
             l1 = (ListView) findViewById(R.id.lunchList);
-
-//            adapter1 = new ArrayAdapter<>(dayView.this,
-//                    android.R.layout.simple_list_item_1, array1);
-//            l1.setAdapter(adapter1);
 
             //onClickListener of the second tab
             l1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -164,10 +155,6 @@ public class dayView extends ActionBarActivity {
 
             ///////////////////////////////////////////////////////////////////////////////////////
             l2 = (ListView) findViewById(R.id.dinnerList);
-
-//            adapter2 = new ArrayAdapter<>(dayView.this,
-//                    android.R.layout.simple_list_item_1, array2);
-//            l2.setAdapter(adapter2);
 
             //onClickListener of the third tab
             l2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -273,8 +260,7 @@ public class dayView extends ActionBarActivity {
         public ArrayList setDinnerList(HashMap<String, String> meal) {
             Dinner myMeal = new Dinner();
 
-            String type = meal.get("Entree");
-//            System.out.println(type);
+            String type = meal.get("Entree");;
             myMeal.setEntree(type);
 
             type = meal.get("Soup");
@@ -291,52 +277,3 @@ public class dayView extends ActionBarActivity {
     }
 
 }
-
-
-    //public void test(View view) {
-
-       /* DinnerTest test = new DinnerTest();
-
-        test.testEntree();
-        test.testSides();
-        test.testDisplayEandS();
-
-        test.testMeal();
-        test.testDisplay();*/
-
- /*   public ArrayList<String> Firebase(String building, String meal, String month, String day, String year) {
-
-        MyFirebase me = new MyFirebase();
-
-        me.Firebase(building, meal, month, day, year);
-        System.out.println(me.entree + " " + me.fruit);
-
-        return me.setBreakky();
-    }
-}
-
-
-
-/*
-        Lunch lunch = new Lunch();
-        ArrayList<String> array1;
-        array1 = lunch.getArrayOfOptions(this, "salad", "lunch");
-
-        ListView l1 = (ListView) findViewById(R.id.lunchList);
-        ArrayAdapter<String> adapter1;
-
-        adapter1 = new ArrayAdapter<>(dayView.this,
-                android.R.layout.simple_list_item_1, array1);
-        l1.setAdapter(adapter1);
-
-        Dinner dinner = new Dinner();
-        ArrayList<String> array2;
-        array2 = dinner.getArrayOfOptions(this, "dessert", "dinner");
-
-        ListView l2 = (ListView) findViewById(R.id.dinnerList);
-        ArrayAdapter<String> adapter2;
-
-        adapter2 = new ArrayAdapter<>(dayView.this,
-                android.R.layout.simple_list_item_1, array2);
-        l2.setAdapter(adapter2);
-*/

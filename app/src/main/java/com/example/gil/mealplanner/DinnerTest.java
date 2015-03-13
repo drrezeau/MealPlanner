@@ -20,7 +20,7 @@ public class DinnerTest extends TestCase {
     }
 
     public void testMeal() {
-        mealD.setMeal("Steak", "Ceasar Salad", "French Soup", "Broccoli", "Pudding");
+        mealD.setMeal("Steak", "Ceasar Salad", "Broccoli", "Pudding");
         assertEquals("Steak", mealD.getEntree());
         assertEquals("Ceasar Salad", mealD.getSide1());
         assertEquals("Broccoli", mealD.getVeg());
