@@ -69,8 +69,6 @@ public class MainActivity extends ActionBarActivity {
 
         cal = (CalendarView) findViewById(R.id.calendarView);
 
-        setTitle("Fort Worth");
-
         setFirebaseOnLoad();
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
@@ -265,30 +263,39 @@ public class MainActivity extends ActionBarActivity {
         switch (buildingNumber) {
             case 0:
                 ref1 = ref.child("Fort Worth");
+                setTitle("Fort Worth");
                 break;
             case 1:
                 ref1 = ref.child("El Paso");
+                setTitle("El Paso");
                 break;
             case 2:
                 ref1 = ref.child("Snyder");
+                setTitle("Snyder");
                 break;
             case 3:
                 ref1 = ref.child("Amarillo");
+                setTitle("Amarillo");
                 break;
             case 4:
                 ref1 = ref.child("Hobbs");
+                setTitle("Hobbs");
                 break;
             case 5:
                 ref1 = ref.child("Los Lunas");
+                setTitle("Los Lunas");
                 break;
             case 6:
                 ref1 = ref.child("Carlsbad");
+                setTitle("Carlsbad");
                 break;
             case 7:
                 ref1 = ref.child("Artesia");
+                setTitle("Artesia");
                 break;
             case 8:
                 ref1 = ref.child("Lovington");
+                setTitle("Lovington");
                 break;
         }
         newFirebase();
