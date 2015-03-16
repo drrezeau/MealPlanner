@@ -1,16 +1,27 @@
 package com.example.gil.mealplanner;
 
 import android.annotation.TargetApi;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 //import android.os.AsyncTask;
 import android.os.Build;
+import android.os.SystemClock;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.ProgressBar;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -46,7 +57,8 @@ public class MainActivity extends ActionBarActivity {
      * *****************
      */
 
-    int buildingNumber = 0;
+    private ProgressDialog progress;
+    private int buildingNumber = 0;
 
     Firebase ref;
     Firebase ref1;
@@ -61,15 +73,18 @@ public class MainActivity extends ActionBarActivity {
 
         setBuildingNumber();
 
-
-
         ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
         ref1 = ref.child("Fort Worth");
 
-
         cal = (CalendarView) findViewById(R.id.calendarView);
 
+        progress = new ProgressDialog(this);
+        progress.setTitle("Loading");
+        progress.setMessage("Wait while loading...");
+        progress.show();
+
         setFirebaseOnLoad();
+
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
 
@@ -141,6 +156,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
+
     }
 
     private void newFirebase() {
@@ -149,6 +165,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 Building = (HashMap) dataSnapshot.getValue();
+                progress.dismiss();
             }
 
             @Override
@@ -220,8 +237,12 @@ public class MainActivity extends ActionBarActivity {
             writeFile();
             setBuildingNumber();
             newFirebase();
-        }
 
+            progress = new ProgressDialog(this);
+            progress.setTitle("Loading");
+            progress.setMessage("Wait while loading...");
+            progress.show();
+        }
         return true;
     }
 

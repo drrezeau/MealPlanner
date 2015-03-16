@@ -31,7 +31,7 @@ public class Meal {
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         String type = "entree";
 
-        Log.e("go team", "index: " + num + "  Meal: " + meal + "  type: " + type);
+        //Log.e("go team", "index: " + num + "  Meal: " + meal + "  type: " + type);
 
         switch (num) {
             case 0:
@@ -75,7 +75,6 @@ public class Meal {
             Document dom = DB.parse(is);
 
             NodeList nListEntry = dom.getElementsByTagName(type);
-            Log.e("go team", "index: " + num + "  Meal: " + meal + "  type: " + type);
             Element entryElement = (Element) nListEntry.item(0);
             NodeList nListEntry1 = entryElement.getElementsByTagName("option");
 
