@@ -144,9 +144,6 @@ public class MainActivity extends ActionBarActivity {
     }
 
     private void newFirebase() {
-
-        Firebase ref1 = ref.child("Fort Worth");
-
         ref1.addValueEventListener(new ValueEventListener() {
 
             @Override
