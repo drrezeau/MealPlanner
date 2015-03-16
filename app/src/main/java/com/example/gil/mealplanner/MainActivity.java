@@ -22,6 +22,7 @@ import android.widget.PopupWindow;
 import android.widget.ProgressBar;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -185,6 +186,7 @@ public class MainActivity extends ActionBarActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        int building = item.getItemId();
         switch (item.getItemId()) {
             case R.id.fort_worth:
                 buildingNumber = 0;
@@ -233,16 +235,23 @@ public class MainActivity extends ActionBarActivity {
                 break;
         }
 
-        if (item.getItemId() != R.id.building) {
-            writeFile();
-            setBuildingNumber();
-            newFirebase();
-
+        if (building != R.id.building) {
             progress = new ProgressDialog(this);
             progress.setTitle("Loading");
             progress.setMessage("Wait while loading...");
             progress.show();
+
+
+
+            writeFile();
+            setBuildingNumber();
+            newFirebase();
+
+            System.out.println("!@#$%^&*()_+ New building");
+//            Toast.makeText(this, "I did it!!", Toast.LENGTH_LONG).show();
+
         }
+
         return true;
     }
 

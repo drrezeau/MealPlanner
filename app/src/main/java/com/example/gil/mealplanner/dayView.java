@@ -248,10 +248,11 @@ public class dayView extends ActionBarActivity {
             type = meal.get("Side2");
             myMeal.setStarch(type);
 
-            type = meal.get("Veggetable");
+            type = meal.get("Vegetable");
             myMeal.setVeg(type);
 
             type = meal.get("Dessert");
+            Log.e("Lunch", myMeal.getEntree());
             myMeal.setDessert(type);
 
             return myMeal.returnMeal();
