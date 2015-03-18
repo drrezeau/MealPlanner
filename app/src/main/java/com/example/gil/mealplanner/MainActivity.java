@@ -160,6 +160,9 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * Connects and pulls the data from Firebase
+     */
     private void newFirebase() {
         ref1.addValueEventListener(new ValueEventListener() {
 
@@ -175,7 +178,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -255,6 +257,9 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
+    /**
+     * takes the building number and writes it to the file
+     */
     public void writeFile() {
         String filename = "buildingNum.txt";
         FileOutputStream outputStream;
@@ -269,6 +274,10 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
+    /**
+     * sets the local building number when changing buildings
+     * Also writes it to local file for later use.
+     */
     public void setBuildingNumber() {
 
         try {
@@ -286,6 +295,9 @@ public class MainActivity extends ActionBarActivity {
 
     }
 
+    /**
+     * when changing a building, loads the new firebase data
+     */
     private void setFirebaseOnLoad() {
         switch (buildingNumber) {
             case 0:
