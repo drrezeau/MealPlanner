@@ -4,186 +4,203 @@
 <dinner>
 
     <entree>
-        <option> OPEN FACED TURKEY </option>
-        <option> MINI SUBS </option>
-        <option> EGG SALAD SAND </option>
-        <option> SPAGHETTI </option>
-        <option> CHICKEN STRIP </option>
-        <option> GRILLED HAM AND CHEESE </option>
-        <option> BACON LETTUCE AND TOMATO </option>
-        <option> TATER TOT HOT DISH </option>
-        <option> ROAST PORK SANDWICH </option>
-        <option> CHICKEN SALAD SANDWICH ON CROISSANT </option>
-        <option> PIZZA </option>
-        <option> STEW </option>
-        <option> PORK FRIED RICE AND EGGROLL </option>
-        <option> CHEESE BURGERS </option>
-        <option> BAKED POTATO BAR </option>
-        <option> FRENCH DIP </option>
-        <option> CHICKEN TENDERS </option>
-        <option> HOT ROAST BEEF </option>
-        <option> SHEPARDS PIE </option>
-        <option> HAM AND SWISS MELT </option>
-        <option> CHICKEN CASSEROLE </option>
-        <option> PHILLY STEAK SAND </option>
-        <option> CHICKEN POT PIE </option>
-        <option> SCALLOPED POTATOS AND HAM </option>
-        <option> SLOPPY JOES </option>
-        <option> TURKEY NOODLE CASSEROLE </option>
-        <option> HOT DOG </option>
-        <option> TURKEY TOMATO AND SWISS </option>
-        <option> CHICKEN AND DUMPLINGS </option>
-        <option> MACARONI AND CHEESE </option>
-        <option> CHICKEN DRUMMIES </option>
-        <option> CLUB SAND </option>
-        <option> CHEESE BURGER </option>
-        <option> QUICHE </option>
-        <option> SMOKED TURKEY SAND </option>
+        <option> Assorted Sandwiches </option>
+        <option> Bacon Lettuce and Tomato </option>
+        <option> Baked Potato Bar </option>
+        <option> BBQ Chicken Thighs </option>
+        <option> Breaded Chicken Drumstick </option>
+        <option> Cheese Burger </option>
+        <option> Chicken and Dumplings </option>
+        <option> Chicken Casserole </option>
+        <option> Chicken Dummies </option>
+        <option> Chicken Pot Pie </option>
+        <option> Chicken Salad Sandwich on Croissant </option>
+        <option> Chicken Strips </option>
+        <option> Chicken Tenders </option>
+        <option> Chicken Tenders and Fries </option>
+        <option> Club Sandwich </option>
+        <option> Cold Meat Plate with Multigrain Roll </option>
+        <option> Delux Pizza </option>
+        <option> Denver Omlette with Texas Toast </option>
+        <option> Egg Salad Sandwich </option>
+        <option> Fish and Chips </option>
+        <option> French Dip </option>
+        <option> Grilled Cheese Sandwich </option>
+        <option> Grilled Ham and Cheese </option>
+        <option> Ham Salad Sandwich </option>
+        <option> Ham Sandwich </option>
+        <option> Ham Swiss Cheese and Tomato Melt </option>
+        <option> Hot Dog </option>
+        <option> Hot Dog or Chilli Dog with French Fries </option>
+        <option> Hot Pastrami Sandwich </option>
+        <option> Hot Roast Beef </option>
+        <option> Macaroni and Beef Casserole </option>
+        <option> Macaroni and Cheese </option>
+        <option> Meatloaf Sandwich </option>
+        <option> Mini Subs </option>
+        <option> Open Faced Turkey </option>
+        <option> Philly Steak Sandwich </option>
+        <option> Pizza </option>
+        <option> Pork Fried Rice and Egg Roll </option>
+        <option> Quiche </option>
+        <option> Quiche Lorraine </option>
+        <option> Reuben Sandwich </option>
+        <option> Roast Beef Sandwich </option>
+        <option> Roast Pork Sandwich </option>
+        <option> Salmon Salad Sandwich </option>
+        <option> Scalloped Potatoes and Ham </option>
+        <option> Shepherds Pie </option>
+        <option> Sloppy Joes </option>
+        <option> Smoked Turkey Sandwich </option>
+        <option> Spaghetti </option>
+        <option> Stew </option>
+        <option> Tater Tot Hot Dish </option>
+        <option> Toasted Tuna Salad Sandwich </option>
+        <option> Tuna Salad Sandwich </option>
+        <option> Turkey Noodle Casserole </option>
+        <option> Turkey Salad Sandwich </option>
+        <option> Turkey Tomato and Swiss </option>
     </entree>
 
     <soup>
-        <option> VEGETABLE </option>
-        <option>  BEEF BARLEY </option>
-        <option>  BEEF NOODLE </option>
-        <option>  ITALIAN WEDDING </option>
-        <option> VEGETABLE PASTA </option>
-        <option> CLAM CHOWDER </option>
-        <option> TOM RICE </option>
-        <option> SPLIT PEA </option>
-        <option> POTATO </option>
-        <option> CORN CHOWDER </option>
-        <option> CHICKEN FLORENTINE </option>
-        <option> EGG DROP </option>
-        <option> CREAM OF BROCOLI </option>
-        <option> POTATO SAUSAGE </option>
-        <option> CREAMY CHICKEN NOODLE </option>
-        <option> TURKEY RICE </option>
-        <option> CLAM CHOWDER </option>
-        <option> HAM AND BEAN </option>
-        <option> CREAM OF TOMATO </option>
-        <option> SANTA FE FIESTA </option>
-        <option> CREAM OF MUSHROOM </option>
-        <option> SPLIT PEA </option>
-        <option> CHICKEN GUMBO </option>
-        <option> TURKEY RICE </option>
-        <option> CHUNKY TOMATO </option>
-        <option>  BEEF BARLEY </option>
-        <option> CAULIFLOWER AND CHEESE </option>
-        <option> CORN CHOWDER </option>
-        <option> CREAM OF TOMATO </option>
-        <option> BEEF VEGETABLE </option>
-        <option> CHICKEN NOODLE </option>
-        <option> BROCCOLI CHEESE </option>
-        <option> CREAM OF MUSHROOM </option>
+        <option> Bean and Bacon </option>
+        <option> Beef Barley </option>
+        <option> Beef Consomme </option>
+        <option> Beef Noodle </option>
+        <option> Beef Vegetable </option>
+        <option> Broccoli Cheese </option>
+        <option> Cauliflower and Cheese </option>
+        <option> Chicken Florentine </option>
+        <option> Chicken Gumbo </option>
+        <option> Chicken Noodle </option>
+        <option> Chicken Vegetable </option>
+        <option> Chinese Egg Drop </option>
+        <option> Chunky Tomato </option>
+        <option> Clam Chowder </option>
+        <option> Corn Chowder </option>
+        <option> Cream of Broccoli </option>
+        <option> Cream of Carrot </option>
+        <option> Cream of Mushroom </option>
+        <option> Cream of Tomato </option>
+        <option> Creamy Chicken Noodle </option>
+        <option> Ham and Bean </option>
+        <option> Hearty Vegetable </option>
+        <option> Italian Wedding </option>
+        <option> Lentil </option>
+        <option> Minestrone with Baby Pasta Shells </option>
+        <option> Muligataway </option>
+        <option> Potato </option>
+        <option> Potato and Leek </option>
+        <option> Potato Sausage </option>
+        <option> Roasted Vegetable and Garlic </option>
+        <option> Santa Fe Fiesta </option>
+        <option> Sausage and Bean </option>
+        <option> Scotch Broth </option>
+        <option> Split Pea </option>
+        <option> Split Pea and Ham </option>
+        <option> Tomato Rice </option>
+        <option> Turkey Rice </option>
+        <option> Vegetable </option>
+        <option> Vegetable Noodle </option>
+        <option> Vegetable Pasta </option>
+        <option> Yellow Split Pea </option>
     </soup>
 
     <garnish>
-        <option> ORANGES ORANGES </option>
-        <option>  POT CHIPS </option>
-        <option> FRUIT/COT CHEESE </option>
-        <option> CAESAR </option>
-        <option> FRENCH FRIES </option>
-        <option> DILL PICKLE </option>
-        <option> FRUIT </option>
-        <option> VEG SLICES </option>
-        <option> FRENCH FRIES </option>
-        <option> SEASONAL VEG </option>
-        <option> SALAD </option>
-        <option> IMITATION KRAB SALAD </option>
-        <option> EGG ROLL </option>
-        <option> BURGER GARNISH </option>
-        <option> POTATO CHIPS </option>
-        <option> BAKED BEANS </option>
-        <option> CARROTS CELERY STICKS </option>
-        <option> MASHED AND GRAVY </option>
-        <option> B And B PICKLES </option>
-        <option> TOMATO AND DILL PICKLE </option>
-        <option> CHIPS AND  </option>
-        <option> COLESLAW </option>
-        <option> VEG SLICES </option>
-        <option> PEA SALAD </option>
-        <option> POTATO CHIPS </option>
-        <option> SALAD </option>
-        <option> FRENCH FRIES / PICKLE </option>
-        <option> POT SALAD </option>
-        <option> FRUIT </option>
-        <option>  SAUSAGE CHUNKS </option>
-        <option>  MACARONI SALAD </option>
-        <option>  DILL PICKLE </option>
-        <option> COLESLAW </option>
-        <option>  FRUIT </option>
-        <option> POTATO CHIPS </option>
-        <option> POT CHIPS </option>
-        <option> FRUIT/COT CHEESE </option>
-        <option> CAESAR </option>
-        <option> FRENCH FRIES </option>
-        <option> DILL PICKLE </option>
-        <option> FRUIT </option>
-        <option> VEG SLICES </option>
-        <option> FRENCH FRIES </option>
-        <option> SEASONAL VEG </option>
-        <option> SALAD </option>
-        <option> IMITATION KRAB SALAD </option>
-        <option> EGG ROLL </option>
-        <option> BURGER GARNISH </option>
-        <option> POTATO CHIPS </option>
-        <option> BAKED BEANS </option>
-        <option> CARROTS CELERY STICKS </option>
-        <option> MASHED AND GRAVY </option>
-        <option> TOMATO AND DILL PICKLE </option>
-        <option> CHIPS AND SALSA </option>
-        <option> COLESLAW </option>
-        <option> VEG SLICES </option>
-        <option> PEA SALAD </option>
-        <option> POTATO CHIPS </option>
-        <option>  SALAD </option>
-        <option> FRENCH FRIES / PICKLE </option>
-        <option> POT SALAD </option>
-        <option> FRUIT </option>
-        <option> SAUSAGE CHUNKS </option>
-        <option> MACARONI SALAD </option>
-        <option> DILL PICKLE </option>
-        <option> COLESLAW </option>
-        <option> FRUIT C </option>
-        <option> POTATO CHIPS </option>
+        <option> B and B Pickles </option>
+        <option> Baked Beans </option>
+        <option> Bread and Butter Pickle Slices </option>
+        <option> Burger Garnish </option>
+        <option> Caesar Salad </option>
+        <option> Caesar Salad and Bun </option>
+        <option> Carrots and Celery Sticks </option>
+        <option> Chips and Salsa </option>
+        <option> Coleslaw </option>
+        <option> Coleslaw with Whole Wheat Biscuit or Bun </option>
+        <option> Dill Pickle </option>
+        <option> Dill Pickle Slice </option>
+        <option> Egg Roll </option>
+        <option> French Fries </option>
+        <option> Fruit </option>
+        <option> Fruit Slices </option>
+        <option> Fuit/Cottage Cheese </option>
+        <option> Half Dill Pickle </option>
+        <option> Imitation Crab Salad </option>
+        <option> Macaroni Salad </option>
+        <option> Mashed and Gravy </option>
+        <option> Melon Wedge </option>
+        <option> Orange Slices </option>
+        <option> Oranges </option>
+        <option> Pea Salad </option>
+        <option> Pickled Beet Slices </option>
+        <option> Potato Chips </option>
+        <option> Potato Salad </option>
+        <option> Salad </option>
+        <option> Sausage Chunks </option>
+        <option> Seasonal Fruit </option>
+        <option> Seasonal Vegetables </option>
+        <option> Side Garden Salad </option>
+        <option> Side Green Salad </option>
+        <option> Side Potato Salad </option>
+        <option> Side Salad </option>
+        <option> Side Salad Orange Slices </option>
+        <option> Sliced Fruit </option>
+        <option> Tomato and Cucumber Slices </option>
+        <option> Tomato and Dill Pickle </option>
+        <option> Tossed Salad </option>
+        <option> Vegetable Slices </option>
+        <option> Vegetable Sticks and Dip </option>
     </garnish>
 
     <dessert>
-        <option> RICE KRISPEE  </option>
-        <option> BROKEN GLASS  </option>
-        <option> UPSIDE DOWN CAKE  </option>
-        <option> SLICED PEACH/ COOKIE  </option>
-        <option> STRAW MOUSSE  </option>
-        <option> SELECTION  </option>
-        <option> ICE CREAM </option>
-        <option> SELECTION </option>
-        <option> BLONDE BROWNIE </option>
-        <option> LEMON BARS </option>
-        <option> CHOCOLATE MOUSSE </option>
-        <option> COOKIE </option>
-        <option> TAPIOCA </option>
-        <option>  BROWNIES </option>
-        <option> BANANA PUDDING </option>
-        <option> UPSIDE DOWN CAKE </option>
-        <option> COOKIES </option>
-        <option> PINEAPPLE DELIGHT </option>
-        <option> LEMON BARS </option>
-        <option> SHERBET/COOKIE </option>
-        <option> APPLE SPICE CAKE </option>
-        <option> SELECTION / JELLO </option>
-        <option> VANILLA MOUSSE </option>
-        <option> PEACH CRISP </option>
-        <option> PINEAPPLE W/COOKIE </option>
-        <option> CHOCOLATE CAKE </option>
-        <option> APPLE CRISP </option>
-        <option> DOUBLE DECK DELITE </option>
-        <option> APPLE CAKE </option>
-        <option> SELECTION/ FRUITED JELLO </option>
-        <option> BROWNIE </option>
-        <option> CHOCOLATE PUDDING </option>
-        <option> COOKIE </option>
-        <option> SUNDAES </option>
-        <option> PEACHES </option>
+        <option> Apple Blueberry Crumble </option>
+        <option> Apple Cake </option>
+        <option> Apple Crisp </option>
+        <option> Apple Spice Cake </option>
+        <option> Baked Custard </option>
+        <option> Banana Pudding </option>
+        <option> Berries and Whipped Cream </option>
+        <option> Blonde Brownie </option>
+        <option> Broken Glass </option>
+        <option> Brownies </option>
+        <option> Butterscotch Pudding </option>
+        <option> Chocolate Cake </option>
+        <option> Chocolate Mousse </option>
+        <option> Chocolate Pudding </option>
+        <option> Coconut Pudding </option>
+        <option> Cookie </option>
+        <option> Diced Pears with Cookie </option>
+        <option> Double Deck Delight </option>
+        <option> Fruit Cocktail in Jell-O </option>
+        <option> Ice Cream </option>
+        <option> Ice Cream Sundaes </option>
+        <option> Ice Cream with Cookie </option>
+        <option> Jell-O Whip </option>
+        <option> Lemon Bars </option>
+        <option> Lemon Meringue Tarts </option>
+        <option> Mandarin Fiesta </option>
+        <option> Peach Crisp </option>
+        <option> Peaches </option>
+        <option> Pineapple Delight </option>
+        <option> Pineapple Tidbits </option>
+        <option> Pineapple with Cookie </option>
+        <option> Rainbow Jell-O with Whipped Topping </option>
+        <option> Rainbow Sherbet </option>
+        <option> Raspberry Chiffon </option>
+        <option> Raspberry Fluff </option>
+        <option> Rhubarb Crisp </option>
+        <option> Rice Krispee </option>
+        <option> Selection </option>
+        <option> Selection/Fruited Salad </option>
+        <option> Selection/Jell-O </option>
+        <option> Sherbet </option>
+        <option> Sherbet with Wafers </option>
+        <option> Sherbet/Cookie </option>
+        <option> Sliced Peach/Cookie </option>
+        <option> Strawberry Mousse </option>
+        <option> Tapioca Pudding </option>
+        <option> Upside Down Cake </option>
+        <option> Vanilla Mousse </option>
     </dessert>
 
 </dinner>

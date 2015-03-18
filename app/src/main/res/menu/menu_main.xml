@@ -1,6 +1,45 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools" tools:context=".MainActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
-        android:orderInCategory="100" app:showAsAction="never" />
+    <!--<item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />-->
+
+    <item
+        android:icon="@drawable/building"
+        android:id="@+id/building"
+        android:title="@string/buildings"
+        app:showAsAction="ifRoom"
+        >
+
+        <menu>
+            <item
+                android:id="@+id/fort_worth"
+                android:title="Fort Worth"/>
+            <item
+                android:id="@+id/el_paso"
+                android:title="El Paso"/>
+            <item
+                android:id="@+id/snyder"
+                android:title="Snyder"/>
+            <item
+                android:id="@+id/amarillo"
+                android:title="Amarillo"/>
+            <item
+                android:id="@+id/hobbs"
+                android:title="Hobbs"/>
+            <item
+                android:id="@+id/los_lunas"
+                android:title="Los Lunas"/>
+            <item
+                android:id="@+id/carlsbad"
+                android:title="Carlsbad"/>
+            <item
+                android:id="@+id/artesia"
+                android:title="Artesia"/>
+            <item
+                android:id="@+id/lovington"
+                android:title="Lovington"/>
+        </menu>
+    </item>
+
 </menu>
