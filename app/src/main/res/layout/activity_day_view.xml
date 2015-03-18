@@ -18,41 +18,31 @@
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:id="@+id/layout">
 
             <TabWidget
-                android:id="@android:id/tabs"
+                android:id="@+id/tabs"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content"
+                android:orientation="vertical"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:id="@+id/tab1"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="This is tab 1"
-                        android:id="@+id/textView" />
+                    android:layout_width="353dp"
+                    android:layout_height="490dp"
+                    android:orientation="vertical"
+                    android:weightSum="1">
 
                     <ListView
-                        android:layout_width="fill_parent"
-                        android:layout_height="200sp"
-                        android:id="@+id/breakfastList" />
-
-                    <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Test"
-                        android:onClick="test"
-                        android:id="@+id/button" />
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/breakfastView" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -61,11 +51,10 @@
                     android:layout_height="fill_parent"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="This is tab 2"
-                        android:id="@+id/textView2" />
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lunchView" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -74,14 +63,14 @@
                     android:layout_height="fill_parent"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="This is tab 3"
-                        android:id="@+id/textView3" />
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/dinnerView" />
                 </LinearLayout>
 
             </FrameLayout>
+
         </LinearLayout>
     </TabHost>
 
