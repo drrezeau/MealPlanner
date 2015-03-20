@@ -101,6 +101,11 @@ public class dayView extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        // TODO Auto-generated method stub
+        Toast.makeText(this, "Go Team!!!!", Toast.LENGTH_SHORT).show();
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 
     class createListView extends AsyncTask<String, String, String> {
 
@@ -138,7 +143,7 @@ public class dayView extends ActionBarActivity {
                     intent.putExtra("meal", "breakfast");
                     intent.putExtra("index", i.toString());
                     intent.putExtra("option", i.toString());
-                    startActivity(intent);
+                    startActivityForResult(intent, 0);
 
 //                    progress = new ProgressDialog(dayView.this);
 //                    progress.setTitle("Loading");
@@ -170,7 +175,7 @@ public class dayView extends ActionBarActivity {
                     intent.putExtra("currentOption", item);
                     intent.putExtra("index", i.toString());
                     intent.putExtra("meal", "lunch");
-                    startActivity(intent);
+                    startActivityForResult(intent, 1);
 
 //                    progress = new ProgressDialog(dayView.this);
 //                    progress.setTitle("Loading");
@@ -203,7 +208,7 @@ public class dayView extends ActionBarActivity {
                     intent.putExtra("meal", "dinner");
                     intent.putExtra("index", i.toString());
                     intent.putExtra("option", i.toString());
-                    startActivity(intent);
+                    startActivityForResult(intent, 0);
 
 //                            progress = new ProgressDialog(dayView.this);
 //                            progress.setTitle("Loading");
