@@ -130,6 +130,9 @@ public class dayView extends ActionBarActivity {
         public ArrayList<String> array1;
         public ArrayList array2;
 
+
+        //This is a change for 308 IGNORE THIS KENDALL
+
         public void updateSingle(int index, String newItem, String meal) {
 
             l = (ListView) findViewById(R.id.breakfastList);
