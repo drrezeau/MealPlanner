@@ -103,8 +103,19 @@ public class dayView extends ActionBarActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
-        Toast.makeText(this, "Go Team!!!!", Toast.LENGTH_SHORT).show();
+
+        MainActivity.newFirebase();
+
+            Log.e("OK", "I AM OKAY");
+            String newItem = data.getStringExtra("newItem");
+            int index = data.getIntExtra("index", -1);
+            String meal = data.getStringExtra("meal");
+
+            new createListView().updateSingle(index, newItem, meal);
+
+
         super.onActivityResult(requestCode, resultCode, data);
+//        finish();
     }
 
     class createListView extends AsyncTask<String, String, String> {
@@ -118,6 +129,26 @@ public class dayView extends ActionBarActivity {
         public ArrayList<String> array;
         public ArrayList<String> array1;
         public ArrayList array2;
+
+        public void updateSingle(int index, String newItem, String meal) {
+
+            l = (ListView) findViewById(R.id.breakfastList);
+            l1 = (ListView) findViewById(R.id.lunchList);
+            l2 = (ListView) findViewById(R.id.dinnerList);
+
+            if (meal.equals("Breakfast")) {
+                TextView v = (TextView) l.getChildAt(index);
+                v.setText(newItem);
+            } else if (meal.equals("Lunch")) {
+                TextView v = (TextView) l1.getChildAt(index);
+                v.setText(newItem);
+            }
+            else if (meal.equals("Dinner")) {
+                TextView v = (TextView) l2.getChildAt(index);
+                v.setText(newItem);
+            }
+
+        }
 
         @Override
         protected void onPreExecute() {
@@ -223,7 +254,7 @@ public class dayView extends ActionBarActivity {
             HashMap<String, ArrayList> Year = MainActivity.Building.get(year);
             ArrayList<HashMap> list = Year.get(month);
 
-            HashMap<String, HashMap> Month = new HashMap<>();
+            HashMap<String, HashMap> Month = new HashMap<String, HashMap>();
 
             for (Integer i = 1; i < list.size(); i++) {
                 Month.put(i.toString(), list.get(i));
@@ -239,14 +270,14 @@ public class dayView extends ActionBarActivity {
             meal = (HashMap) dayMap.get("Dinner");
             array2 = setDinnerList(meal);
 
-            adapter = new ArrayAdapter<>(dayView.this, android.R.layout.simple_list_item_1, array);
+            adapter = new ArrayAdapter<String>(dayView.this, android.R.layout.simple_list_item_1, array);
             l.setAdapter(adapter);
 
-            adapter1 = new ArrayAdapter<>(dayView.this,
+            adapter1 = new ArrayAdapter<String>(dayView.this,
                     android.R.layout.simple_list_item_1, array1);
             l1.setAdapter(adapter1);
 
-            adapter2 = new ArrayAdapter<>(dayView.this,
+            adapter2 = new ArrayAdapter<String>(dayView.this,
                     android.R.layout.simple_list_item_1, array2);
             l2.setAdapter(adapter2);
 
@@ -284,10 +315,10 @@ public class dayView extends ActionBarActivity {
             String type = meal.get("Entree");
             myMeal.setEntree(type);
 
-            type = meal.get("Side1");
+            type = meal.get("Salad");
             myMeal.setSalad(type);
 
-            type = meal.get("Side2");
+            type = meal.get("Starch");
             myMeal.setStarch(type);
 
             type = meal.get("Vegetable");

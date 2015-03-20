@@ -62,11 +62,11 @@ public class MainActivity extends ActionBarActivity {
      * *****************
      */
 
-    private ProgressDialog progress;
+    private static ProgressDialog progress;
     private int buildingNumber = 0;
 
     Firebase ref;
-    Firebase ref1;
+    public static Firebase ref1;
     public static HashMap<String, HashMap> Building;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
@@ -167,7 +167,8 @@ public class MainActivity extends ActionBarActivity {
     /**
      * Connects and pulls the data from Firebase
      */
-    private void newFirebase() {
+    public static void newFirebase() {
+        Log.e("Firebase", "I AM IN NEWFIREBASE");
         ref1.addValueEventListener(new ValueEventListener() {
 
             @Override

@@ -54,29 +54,26 @@ public class activity_option_view extends ActionBarActivity {
 
     public void loadListView(String index1) {
 
-        ArrayList<String> array = new ArrayList<>();
+        ArrayList<String> array = new ArrayList<String>();
         ListView list;
         ArrayAdapter<String> adapter;
         final int index = Integer.parseInt(index1);
 
-        switch (meal)
-        {
-            case "breakfast":
-                Breakfast breakfast = new Breakfast();
-                array = breakfast.getArrayOfOptions(this, index, meal);
-                break;
-            case "lunch":
-                Lunch lunch = new Lunch();
-                array = lunch.getArrayOfOptions(this, index, meal);
-                break;
-            case "dinner":
+        if (meal.equals("breakfast")) {
+            Breakfast breakfast = new Breakfast();
+            array = breakfast.getArrayOfOptions(this, index, meal);
+        }
+        else if (meal.equals("lunch")) {
+            Lunch lunch = new Lunch();
+            array = lunch.getArrayOfOptions(this, index, meal);
+        }
+        else if (meal.equals("dinner")) {
                 Dinner dinner = new Dinner();
                 array = dinner.getArrayOfOptions(this, index, meal);
-                break;
         }
 
         list = (ListView) findViewById(R.id.options);
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, array);
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, array);
 
         list.setAdapter(adapter);
 
@@ -104,6 +101,11 @@ public class activity_option_view extends ActionBarActivity {
 
                 ref1.setValue(item);
 //                Log.e("path", ref1.getPath().toString());
+                Intent RI = new Intent();
+                RI.putExtra("newItem", item);
+                RI.putExtra("index", index);
+                RI.putExtra("meal", meal);
+                setResult(RESULT_OK, RI);
 
                 finish();
             }
