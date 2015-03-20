@@ -40,6 +40,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 
+/**
+ * This is the open screen which the application first opens to.
+ */
 public class MainActivity extends ActionBarActivity {
 
     CalendarView cal;
