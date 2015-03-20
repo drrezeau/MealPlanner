@@ -168,7 +168,6 @@ public class MainActivity extends ActionBarActivity {
      * Connects and pulls the data from Firebase
      */
     public static void newFirebase() {
-        Log.e("Firebase", "I AM IN NEWFIREBASE");
         ref1.addValueEventListener(new ValueEventListener() {
 
             @Override
@@ -301,7 +300,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     /**
-     * when changing a building, loads the new firebase data
+     * when changing a building, loads the relevant Firebase data
      */
     private void setFirebaseOnLoad() {
         switch (buildingNumber) {

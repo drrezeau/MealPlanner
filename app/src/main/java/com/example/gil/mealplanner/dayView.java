@@ -101,6 +101,12 @@ public class dayView extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * What happens when we return from the optionView activity
+     * @param requestCode
+     * @param resultCode the resulting code from the previous activity
+     * @param data the data which was passed back.
+     */
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
 
@@ -115,9 +121,12 @@ public class dayView extends ActionBarActivity {
 
 
         super.onActivityResult(requestCode, resultCode, data);
-//        finish();
     }
 
+    /**
+     * The class which is Async, allowing us to run the filling and
+     * creation of the listViews on each tab.
+     */
     class createListView extends AsyncTask<String, String, String> {
 
         public ArrayAdapter<String> adapter;
@@ -133,6 +142,14 @@ public class dayView extends ActionBarActivity {
 
         //This is a change for 308 IGNORE THIS KENDALL
 
+
+        /**
+         *  A function we use to update single children of the
+         *  listView on each tab.
+         * @param index the spot of which item is being changed (INT form)
+         * @param newItem the string of the item to replace with
+         * @param meal Which meal is being changed
+         */
         public void updateSingle(int index, String newItem, String meal) {
 
             l = (ListView) findViewById(R.id.breakfastList);

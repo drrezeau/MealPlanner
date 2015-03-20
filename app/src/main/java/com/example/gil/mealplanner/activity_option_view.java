@@ -52,6 +52,10 @@ public class activity_option_view extends ActionBarActivity {
 
     }
 
+    /**
+     * Loads the file which has been parsed into the listView
+     * @param index1 the index for which part of the meal we are changing
+     */
     public void loadListView(String index1) {
 
         ArrayList<String> array = new ArrayList<String>();
@@ -136,6 +140,12 @@ public class activity_option_view extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Exchanges the int of the index to a String depending on which meal you
+     * are changing
+     * @param num the index of the meal
+     * @return type; which is found using the index
+     */
     private String getType(int num) {
         String type = "";
         switch (num) {
@@ -176,6 +186,11 @@ public class activity_option_view extends ActionBarActivity {
         return type;
     }
 
+    /**
+     * Takes the given String and changes it to TitleCase
+     * @param input the String to change
+     * @return the String in TitleCase
+     */
     public static String toTitleCase(String input) {
         StringBuilder titleCase = new StringBuilder();
         boolean nextTitleCase = true;

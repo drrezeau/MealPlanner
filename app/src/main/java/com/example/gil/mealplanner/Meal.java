@@ -27,7 +27,7 @@ public class Meal {
         Log.e("go team", "index: " + num + "  Meal: " + meal);
 
 
-        ArrayList<String> array = new ArrayList<>();
+        ArrayList<String> array = new ArrayList<String>();
         DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
         String type = "entree";
 
