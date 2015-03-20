@@ -3,7 +3,6 @@ package com.example.gil.mealplanner;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -11,12 +10,10 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
-import java.util.StringTokenizer;
 
 
 public class activity_option_view extends ActionBarActivity {

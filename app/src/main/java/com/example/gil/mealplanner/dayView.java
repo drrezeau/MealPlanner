@@ -1,8 +1,6 @@
 package com.example.gil.mealplanner;
 
-//import android.app.ActionBar;
 import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -18,13 +16,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
-import android.widget.Toast;
 
-//import com.firebase.client.Firebase;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-//import java.util.List;
+
+import static com.example.gil.mealplanner.MainActivity.Building;
 
 public class dayView extends ActionBarActivity {
 
@@ -32,7 +29,6 @@ public class dayView extends ActionBarActivity {
     String building;
     String day;
     String year;
-    private ProgressDialog progress;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -103,7 +99,7 @@ public class dayView extends ActionBarActivity {
 
     /**
      * What happens when we return from the optionView activity
-     * @param requestCode
+     * @param requestCode the requested code
      * @param resultCode the resulting code from the previous activity
      * @param data the data which was passed back.
      */
@@ -271,7 +267,7 @@ public class dayView extends ActionBarActivity {
 
         @Override
         protected String doInBackground(String... params) {
-            HashMap<String, ArrayList> Year = MainActivity.Building.get(year);
+            HashMap<String, ArrayList> Year = Building.get(year);
             ArrayList<HashMap> list = Year.get(month);
 
             HashMap<String, HashMap> Month = new HashMap<String, HashMap>();

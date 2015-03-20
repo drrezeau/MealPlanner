@@ -2,7 +2,6 @@ package com.example.gil.mealplanner;
 
 import android.content.Context;
 import android.util.Log;
-import android.widget.Toast;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
