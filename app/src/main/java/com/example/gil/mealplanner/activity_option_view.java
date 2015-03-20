@@ -3,6 +3,7 @@ package com.example.gil.mealplanner;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,11 +13,19 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 
 public class activity_option_view extends ActionBarActivity {
+
+    String month;
+    String building;
+    String day;
+    String year;
+    String meal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,18 +42,22 @@ public class activity_option_view extends ActionBarActivity {
         String index = intent.getStringExtra("index"); //
         // 0 the first tag with the xml, 1 for the second, etc.
 
-        String meal = intent.getStringExtra("meal");
+        meal = intent.getStringExtra("meal");
+        month = intent.getStringExtra("month");
+        building = intent.getStringExtra("building");
+        day = intent.getStringExtra("day");
+        year = intent.getStringExtra("year");
 
-        loadListView(index, meal);
+        loadListView(index);
 
     }
 
-    public void loadListView(String index1, String meal) {
+    public void loadListView(String index1) {
 
         ArrayList<String> array = new ArrayList<>();
         ListView list;
         ArrayAdapter<String> adapter;
-        int index = Integer.parseInt(index1);
+        final int index = Integer.parseInt(index1);
 
         switch (meal)
         {
@@ -70,6 +83,27 @@ public class activity_option_view extends ActionBarActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String item = ((TextView) view).getText().toString();
+
+//                Log.e("date", month);
+//                Log.e("date", day);
+//                Log.e("date", building);
+//                Log.e("date", year);
+
+                Firebase ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
+
+                String type = getType(index);
+
+
+                type = toTitleCase(type);
+                meal = toTitleCase(meal);
+//                Log.e("newDate", type);
+
+                Firebase ref1 = ref.child(building).child(year).child(month).child(day).child(meal).child(type);
+
+                ref1.setValue(item);
+//                Log.e("path", ref1.getPath().toString());
 
                 finish();
             }
@@ -98,5 +132,63 @@ public class activity_option_view extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private String getType(int num) {
+        String type = "";
+        switch (num) {
+            case 0:
+                type = "entree";
+                break;
+            case 1:
+                if (meal.equals("dinner"))
+                    type = "soup";
+                else if (meal.equals("lunch"))
+                    type = "salad";
+                else
+                    type = "side1";
+                break;
+            case 2:
+                if (meal.equals("dinner"))
+                    type = "garnish";
+                else if (meal.equals("lunch"))
+                    type = "starch";
+                else
+                    type = "side2";
+                break;
+            case 3:
+                if (meal.equals("dinner"))
+                    type = "dessert";
+                else if (meal.equals("lunch"))
+                    type = "vegetable";
+                else
+                    type = "fruit";
+                break;
+            case 4:
+                if (meal.equals("lunch"))
+                    type = "dessert";
+                else
+                    type = "cereal";
+                break;
+        }
+        return type;
+    }
+
+    public static String toTitleCase(String input) {
+        StringBuilder titleCase = new StringBuilder();
+        boolean nextTitleCase = true;
+
+        for (char c : input.toCharArray()) {
+            if (Character.isSpaceChar(c)) {
+                nextTitleCase = true;
+            } else if (nextTitleCase) {
+                c = Character.toTitleCase(c);
+                nextTitleCase = false;
+            }
+
+            titleCase.append(c);
+        }
+
+        return titleCase.toString();
     }
 }

@@ -3,6 +3,7 @@ package com.example.gil.mealplanner;
 //import android.app.ActionBar;
 import android.annotation.TargetApi;
 import android.app.ActionBar;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -31,6 +32,7 @@ public class dayView extends ActionBarActivity {
     String building;
     String day;
     String year;
+    private ProgressDialog progress;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
     @Override
@@ -126,11 +128,22 @@ public class dayView extends ActionBarActivity {
 
                     String item = ((TextView) view).getText().toString();
 
+                    intent.putExtra("month", month);
+                    Log.e("BUILDING", building);
+                    intent.putExtra("building", building);
+                    intent.putExtra("day", day);
+                    intent.putExtra("year", year);
+
                     intent.putExtra("currentOption", item);
                     intent.putExtra("meal", "breakfast");
                     intent.putExtra("index", i.toString());
                     intent.putExtra("option", i.toString());
                     startActivity(intent);
+
+//                    progress = new ProgressDialog(dayView.this);
+//                    progress.setTitle("Loading");
+//                    progress.setMessage("Wait while loading...");
+//                    progress.show();
                 }
             });
 
@@ -145,12 +158,24 @@ public class dayView extends ActionBarActivity {
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
+
                     String item = ((TextView) view).getText().toString();
+
+
+                    intent.putExtra("month", month);
+                    intent.putExtra("building", building);
+                    intent.putExtra("day", day);
+                    intent.putExtra("year", year);
 
                     intent.putExtra("currentOption", item);
                     intent.putExtra("index", i.toString());
                     intent.putExtra("meal", "lunch");
                     startActivity(intent);
+
+//                    progress = new ProgressDialog(dayView.this);
+//                    progress.setTitle("Loading");
+//                    progress.setMessage("Wait while loading...");
+//                    progress.show();
                 }
             });
 
@@ -165,13 +190,25 @@ public class dayView extends ActionBarActivity {
                     Intent intent = new Intent(dayView.this, activity_option_view.class);
                     Integer i = position;  // The position of the item in the listView
 
-                String item = ((TextView) view).getText().toString();
+                    String item = ((TextView) view).getText().toString();
+
+
+
+                    intent.putExtra("month", month);
+                    intent.putExtra("building", building);
+                    intent.putExtra("day", day);
+                    intent.putExtra("year", year);
 
                     intent.putExtra("currentOption", item);
                     intent.putExtra("meal", "dinner");
                     intent.putExtra("index", i.toString());
                     intent.putExtra("option", i.toString());
                     startActivity(intent);
+
+//                            progress = new ProgressDialog(dayView.this);
+//                            progress.setTitle("Loading");
+//                            progress.setMessage("Wait while loading...");
+//                            progress.show();
                 }
             });
         }
