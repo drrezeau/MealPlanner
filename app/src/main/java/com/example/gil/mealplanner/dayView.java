@@ -106,7 +106,8 @@ public class dayView extends ActionBarActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         // TODO Auto-generated method stub
 
-        MainActivity.newFirebase();
+        if (resultCode == RESULT_OK) {
+            MainActivity.newFirebase();
 
             Log.e("OK", "I AM OKAY");
             String newItem = data.getStringExtra("newItem");
@@ -114,6 +115,7 @@ public class dayView extends ActionBarActivity {
             String meal = data.getStringExtra("meal");
 
             new createListView().updateSingle(index, newItem, meal);
+        }
 
 
         super.onActivityResult(requestCode, resultCode, data);

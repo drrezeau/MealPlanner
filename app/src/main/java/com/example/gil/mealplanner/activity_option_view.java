@@ -130,6 +130,7 @@ public class activity_option_view extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == android.R.id.home) {
+            System.out.println("UP BUTTON");
             finish();
             return true;
         }
