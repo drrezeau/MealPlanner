@@ -1,6 +1,7 @@
 package com.example.gil.mealplanner;
 
 import android.annotation.TargetApi;
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
+import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -69,6 +73,10 @@ public class MainActivity extends ActionBarActivity {
         ref1 = ref.child("Fort Worth");
 
         cal = (CalendarView) findViewById(R.id.calendarView);
+        //864000000 for changing the day back one
+        long milliTime = cal.getDate()-86400000;
+        cal.setDate (milliTime, true, true);
+
 
         progress = new ProgressDialog(this);
         progress.setTitle("Loading");
@@ -83,6 +91,7 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
+
                 Calendar myDate =  Calendar.getInstance();
                 Date x = myDate.getTime();
                 DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
@@ -148,7 +157,6 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         });
-
     }
 
     /**
