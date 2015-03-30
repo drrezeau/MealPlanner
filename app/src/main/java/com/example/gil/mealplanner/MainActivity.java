@@ -1,7 +1,6 @@
 package com.example.gil.mealplanner;
 
 import android.annotation.TargetApi;
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -11,10 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.CalendarView;
-import android.widget.DatePicker;
-import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -94,10 +90,10 @@ public class MainActivity extends ActionBarActivity {
 
             /**
              * Created the listener for the calendar widget
-             * @param view
-             * @param year
-             * @param month
-             * @param dayOfMonth
+             * @param view na
+             * @param year na
+             * @param month na
+             * @param dayOfMonth na
              */
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
@@ -199,8 +195,8 @@ public class MainActivity extends ActionBarActivity {
     /**
      * Creates the items to be displayed when the house icon from
      * the action bar is selected
-     * @param item
-     * @return
+     * @param item na
+     * @return true
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -352,6 +348,7 @@ public class MainActivity extends ActionBarActivity {
                 ref1 = ref.child("Lovington");
                 setTitle("Lovington");
                 break;
+
         }
         newFirebase();
     }
