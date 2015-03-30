@@ -61,6 +61,10 @@ public class MainActivity extends ActionBarActivity {
     public static HashMap<String, HashMap> Building;
 
     @TargetApi(Build.VERSION_CODES.HONEYCOMB)
+
+    /**
+     * Sets up the activty and calendar widget
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,12 +76,6 @@ public class MainActivity extends ActionBarActivity {
         ref = new Firebase("https://sweltering-heat-3046.firebaseio.com");
         ref1 = ref.child("Fort Worth");
 
-        cal = (CalendarView) findViewById(R.id.calendarView);
-        //864000000 for changing the day back one
-        long milliTime = cal.getDate()-86400000;
-        cal.setDate (milliTime, true, true);
-
-
         progress = new ProgressDialog(this);
         progress.setTitle("Loading");
         progress.setMessage("Wait while loading...");
@@ -85,14 +83,27 @@ public class MainActivity extends ActionBarActivity {
 
         setFirebaseOnLoad();
 
+        cal = (CalendarView) findViewById(R.id.calendarView);
+        //864000000 for changing the day back one
+        long milliTime = cal.getDate()-86400000;
+        cal.setDate (milliTime, true, true);
+
+
         cal.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             long date = cal.getDate();
 
+            /**
+             * Created the listener for the calendar widget
+             * @param view
+             * @param year
+             * @param month
+             * @param dayOfMonth
+             */
             @Override
             public void onSelectedDayChange(CalendarView view, int year, int month,
                                             int dayOfMonth) {
 
-                Calendar myDate =  Calendar.getInstance();
+                Calendar myDate = Calendar.getInstance();
                 Date x = myDate.getTime();
                 DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
                 Log.i("Today's Date", format.format(x.getTime()));
@@ -153,7 +164,7 @@ public class MainActivity extends ActionBarActivity {
                     intent.putExtra("day", dayX.toString());
                     intent.putExtra("year", yearX.toString());
 
-                    startActivity(intent);
+                    startActivityForResult(intent, 1);
                 }
             }
         });
@@ -185,6 +196,12 @@ public class MainActivity extends ActionBarActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    /**
+     * Creates the items to be displayed when the house icon from
+     * the action bar is selected
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int building = item.getItemId();
